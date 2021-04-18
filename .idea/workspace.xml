@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin_main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor_,main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SchedulingProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SchedulingProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor_main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor_,main.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +47,7 @@
       <workItem from="1618742615439" duration="117000" />
       <workItem from="1618754520042" duration="3101000" />
       <workItem from="1618757704867" duration="1231000" />
+      <workItem from="1618761702440" duration="1175000" />
     </task>
     <servers />
   </component>

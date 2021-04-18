@@ -33,19 +33,19 @@ class loginView(View):
             if login_user == None:
                 return render(request, 'login.html', {
                     "alert": True,
-                    "message": "로그인 정보가 잘못되었습니다."
+                    "message": "login failed."
                 })
             elif login_user.email != email:
                 return render(request, 'login.html', {
                     "alert": True,
-                    "message": "로그인 정보가 잘못되었습니다."
+                    "message": "login failed."
                 })
             login_myuser = MyUser.objects.get(user=login_user)
 
         except ObjectDoesNotExist:
             return render(request, 'login.html', {
                 "alert": True,
-                "message": "로그인 정보가 잘못되었습니다."
+                "message": "login failed."
             })
 
         if login_myuser.user_type == 'AD':
@@ -57,7 +57,7 @@ class loginView(View):
         else:
             return render(request, 'login.html', {
                 "alert": True,
-                "message": "로그인 정보가 잘못되었습니다."
+                "message": "login failed."
             })
 
 
@@ -93,7 +93,7 @@ class AdminMainView(LoginRequiredMixin, View):
             newUser.save()
             return render(request, 'admin_main.html', {
                 "alert": True,
-                "message": "계정이 생성되었습니다",
+                "message": "account created",
             })
 
 
