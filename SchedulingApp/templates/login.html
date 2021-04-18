@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input id="login_id" name="id" type="text" placeholder="id">
+            <input id="login_pw" name="pw" type="password" placeholder="password">
+            <input id="login_email" name="email" type="email" placeholder="email">
+            <input type="submit" value="login">
+        </form>
+    </body>
+
+    <script>
+        {% if alert %}
+            var message = "{{message}}";
+            alert(message)
+        {% endif %}
+    </script>
+</html>

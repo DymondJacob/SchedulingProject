@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <form action="/main/admin" method="post">
+            {% csrf_token %}
+            <input id="create_id" name="id" type="text" placeholder="id">
+            <input id="create_pw" name="pw" type="text" placeholder="password">
+            <input id="create_email" name="email" type="email" placeholder="email">
+            <div>
+                <span>Status</span>
+                <input type="radio" name="user_type" value = "TA">TA
+                <input type="radio" name="user_type" value = "IN">Instructor
+                <input type="radio" name="user_type" value = "AD">Admin
+            </div>
+            <input type="submit" value="create account">
+        </form>
+    </body>
+
+    <script>
+        {% if alert %}
+            var message = "{{message}}";
+            alert(message)
+        {% endif %}
+    </script>
+</html>

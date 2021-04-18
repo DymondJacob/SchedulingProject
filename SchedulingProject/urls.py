@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from SchedulingApp.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', loginView.as_view()),
+    path('/', loginView.as_view()),
+    path('main/admin', AdminMainView.as_view()),
+    path('main/admin/', AdminMainView.as_view()),
+    path('main/instructor', InstructorMainView.as_view()),
+    path('main/instructor/', InstructorMainView.as_view()),
+    path('main/ta', TaMainView.as_view()),
+    path('main/ta/', TaMainView.as_view()),
 ]
