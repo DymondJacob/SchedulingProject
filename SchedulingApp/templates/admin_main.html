@@ -1,18 +1,64 @@
+<!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+
+<!-- css -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: Create Account</title>
+
+</head>
+
     <body>
-        <form action="/main/admin" method="post">
-            {% csrf_token %}
-            <input id="create_id" name="id" type="text" placeholder="id">
-            <input id="create_pw" name="pw" type="text" placeholder="password">
-            <input id="create_email" name="email" type="email" placeholder="email">
-            <div>
-                <span>Status</span>
-                <input type="radio" name="user_type" value = "TA">TA
-                <input type="radio" name="user_type" value = "IN">Instructor
-                <input type="radio" name="user_type" value = "AD">Admin
+
+        <div class="form-cont">
+            <div class="header">
+                <div class="header-title header-title-form">UWM Schedule Planner</div>
             </div>
-            <input type="submit" value="create account">
-        </form>
+            <div class="form-title">Create New Account</div>
+            <form action="/main/admin" method="post">
+                {% csrf_token %}
+                <div class="form-buttons-cont">
+                    <div class="form-button">
+                        <div class="form-button-title">Username</div>
+                        <input class="form-input" id="create_id" name="id" type="text" placeholder="username">
+                    </div>
+                    <div class="form-button">
+                        <div class="form-button-title">Password</div>
+                        <input class="form-input" id="create_pw" name="pw" type="text" placeholder="password">
+                    </div>
+                    <div class="form-button">
+                        <div class="form-button-title">Email</div>
+                        <input class="form-input" id="create_email" name="email" type="email" placeholder="email">
+                    </div>
+                    <div class="form-button">
+                        <div class="form-button-title">Status</div>
+                        <div class="form-radios">
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "TA">
+                                <div class="radio-title">TA</div>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "IN">
+                                <div class="radio-title">Instructor</div>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "AD">
+                                <div class="radio-title">Admin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-button-cont">
+                    <input class="button action-button" type="submit" value="create account">
+                </div>
+            </form>
+        </div>
+
     </body>
 
     <script>
