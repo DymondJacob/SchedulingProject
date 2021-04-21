@@ -15,6 +15,11 @@ body::-webkit-scrollbar {
     width: 0px;
 }
 
+a{
+    color:#000;
+    text-decoration:none;
+}
+
 .header{
     background-color:#000;
     margin-bottom:5%;
@@ -41,6 +46,7 @@ body::-webkit-scrollbar {
 .header-title-form{
     text-align:center;
     padding-left:0;
+    padding:1.5%;
 }
 
 .form-title{
