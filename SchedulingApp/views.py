@@ -109,11 +109,43 @@ class CreateAccount(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'createaccount.html', {})
 
+    def post(self, request):
+        name = request.POST['name']
+        email = request.POST["email"]
+        pw = request.POST["pw"]
+        status = request.POST['user_type']
+        print(request.POST)
 
 
-def getMyUser(user):
-    try:
-        my = MyUser.objects.get(user=user)
-        return my
-    except ObjectDoesNotExist:
-        return None
+        MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
+        return render(request, 'admin-homepage.html', {})
+
+
+class CreateCourse(LoginRequiredMixin, View):
+    login_url = '/'
+    redirect_field_name = 'redirect_to'
+
+    def get(self, request):
+        return render(request, 'createaccount.html', {})
+
+    def post(self, request):
+        name = request.POST['name']
+        email = request.POST["email"]
+        pw = request.POST["pw"]
+        status = request.POST['user_type']
+        print(request.POST)
+
+
+        MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
+        return render(request, 'admin-homepage.html', {})
+
+
+
+
+#
+# def getMyUser(user):
+#     try:
+#         my = MyUser.objects.get(user=user)
+#         return my
+#     except ObjectDoesNotExist:
+#         return None

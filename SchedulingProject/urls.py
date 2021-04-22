@@ -26,4 +26,5 @@ urlpatterns = [
     path('instructor-homepage.html', InstructorMainView.as_view(), name='instructor-homepage'),
     path('ta-homepage.html', TaMainView.as_view(), name='ta-homepage'),
     path('createaccount.html', CreateAccount.as_view(), name='createaccount'),
+    path('createcourse.html', CreateCourse.as_view(), name='createcourse'),
 ]
