@@ -72,7 +72,7 @@ class AdminMainView(LoginRequiredMixin, View):
         userExist = User.objects.filter(Q(email=email)).exists()
 
         if userExist:
-            return render(request, 'admin_main.html', {
+            return render(request, 'createaccount.html', {
                 "alert": True,
                 "message": "이미 존재하는 id거나 email입니다",
             })
@@ -80,7 +80,7 @@ class AdminMainView(LoginRequiredMixin, View):
             newUser = MyUser.objects.create(password=pw, email=email)
             newUser.myuser.user_type = user_type
             newUser.save()
-            return render(request, 'admin_main.html', {
+            return render(request, 'createaccount.html', {
                 "alert": True,
                 "message": "account created",
             })
@@ -100,6 +100,14 @@ class TaMainView(LoginRequiredMixin, View):
 
     def get(self, request):
         return render(request, 'ta-homepage.html', {})
+
+
+class CreateAccount(LoginRequiredMixin, View):
+    login_url = '/'
+    redirect_field_name = 'redirect_to'
+
+    def get(self, request):
+        return render(request, 'createaccount.html', {})
 
 
 
