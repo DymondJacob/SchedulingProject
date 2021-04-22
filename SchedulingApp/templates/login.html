@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 
 <!-- css -->
-<link href="styles.css" rel="stylesheet" type="text/css">
+    {% load static %}
+<link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -21,9 +22,9 @@
         <form action="/" method="post">
             {% csrf_token %}
             <div class="form-buttons-cont">
-                <div class="form-button">
-                    <div class="form-button-title">Username</div>
-                    <input class="form-input" id="login_id" name="id" type="text" placeholder="Username">
+                 <div class="form-button">
+                    <div class="form-button-title">Email</div>
+                    <input class="form-input" id="login_email" name="email" type="text" placeholder="email">
                 </div>
                 <div class="form-button">
                     <div class="form-button-title">Password</div>
@@ -38,9 +39,9 @@
     </body>
 
     <script>
-        {% if alert %}
-            var message = "{{message}}";
-            alert(message)
-        {% endif %}
+        // {% if alert %}
+        //     var message = "{{message}}";
+        //     alert(message)
+        // {% endif %}
     </script>
 </html>

@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 
 <!-- css -->
-<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -23,18 +23,19 @@
             <form action="/main/admin" method="post">
                 {% csrf_token %}
                 <div class="form-buttons-cont">
+<!--                    <div class="form-button">-->
+<!--                        <div class="form-button-title">Username</div>-->
+<!--                        <input class="form-input" id="create_id" name="id" type="text" placeholder="username">-->
+<!--                    </div>-->
                     <div class="form-button">
-                        <div class="form-button-title">Username</div>
-                        <input class="form-input" id="create_id" name="id" type="text" placeholder="username">
+                        <div class="form-button-title">Email</div>
+                        <input class="form-input" id="create_email" name="email" type="email" placeholder="email">
                     </div>
                     <div class="form-button">
                         <div class="form-button-title">Password</div>
                         <input class="form-input" id="create_pw" name="pw" type="text" placeholder="password">
                     </div>
-                    <div class="form-button">
-                        <div class="form-button-title">Email</div>
-                        <input class="form-input" id="create_email" name="email" type="email" placeholder="email">
-                    </div>
+
                     <div class="form-button">
                         <div class="form-button-title">Status</div>
                         <div class="form-radios">

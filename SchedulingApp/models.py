@@ -10,13 +10,12 @@ class MyUser(models.Model):
         ('IN', 'instructor'),
         ('TA', 'ta'),
     )
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # user_pk = models.IntegerField(blank=True)
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_pk = models.IntegerField(blank=True)
-
-    # name = models.CharField(max_length=20)
-    # password = models.CharField(max_length=20)
-    # email = models.EmailField(max_length=50)
+    name = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    email = models.EmailField(max_length=50)
     user_type = models.CharField(max_length=2, choices=USER_TYPE)
 
 

@@ -12,23 +12,17 @@ from django.db.models import Q
 
 from .models import MyUser
 
-
-# Create your views here.
-
-
 class loginView(View):
     def get(self, request):
         return render(request, 'login.html', {})
-        # return render(request, "index.html")
 
     def post(self, request):
-        _id = request.POST["id"]
         pw = request.POST["pw"]
         email = request.POST["email"]
-
         try:
-            login_user = authenticate(username=_id, password=pw, email=email)
-            login(request, login_user)
+            login_user = MyUser.objects.get(email=email)
+            # login(request, login_user)
+            print(login_user)
 
             if login_user == None:
                 return render(request, 'login.html', {
@@ -40,20 +34,21 @@ class loginView(View):
                     "alert": True,
                     "message": "login failed."
                 })
-            login_myuser = MyUser.objects.get(user=login_user)
-
+            login_myuser = MyUser.objects.get(email=email)
         except ObjectDoesNotExist:
             return render(request, 'login.html', {
                 "alert": True,
                 "message": "login failed."
             })
 
+
+
         if login_myuser.user_type == 'AD':
-            return redirect('main/admin')
+            return redirect('admin-homepage.html')
         elif login_myuser.user_type == 'IN':
-            return redirect('main/instructor')
+            return redirect('instructor-homepage.html')
         elif login_myuser.user_type == 'TA':
-            return redirect('main/ta')
+            return redirect('ta-homepage.html')
         else:
             return render(request, 'login.html', {
                 "alert": True,
@@ -66,21 +61,15 @@ class AdminMainView(LoginRequiredMixin, View):
     redirect_field_name = 'redirect_to'
 
     def get(self, request):
-        print(request.user)
-        my = getMyUser(request.user)
+        return render(request, 'admin-homepage.html', {})
 
-        if my != None and my.user_type == 'AD':
-            return render(request, 'admin_main.html', {})
-        else:
-            return redirect('/')
 
     def post(self, request):
-        _id = request.POST["id"]
         pw = request.POST["pw"]
         email = request.POST["email"]
-        user_type = request.POST.get("user_type")
+        user_type = request.POST['']
 
-        userExist = User.objects.filter(Q(username=_id) | Q(email=email)).exists()
+        userExist = User.objects.filter(Q(email=email)).exists()
 
         if userExist:
             return render(request, 'admin_main.html', {
@@ -88,7 +77,7 @@ class AdminMainView(LoginRequiredMixin, View):
                 "message": "이미 존재하는 id거나 email입니다",
             })
         else:
-            newUser = User.objects.create(username=_id, password=pw, email=email)
+            newUser = MyUser.objects.create(password=pw, email=email)
             newUser.myuser.user_type = user_type
             newUser.save()
             return render(request, 'admin_main.html', {
@@ -102,13 +91,7 @@ class InstructorMainView(LoginRequiredMixin, View):
     redirect_field_name = 'redirect_to'
 
     def get(self, request):
-        print(request.user)
-        my = getMyUser(request.user)
-
-        if my != None and my.user_type == 'IN':
-            return render(request, 'instructor_main.html', {})
-        else:
-            return redirect('/')
+        return render(request, 'instructor-homepage.html', {})
 
 
 class TaMainView(LoginRequiredMixin, View):
@@ -116,14 +99,8 @@ class TaMainView(LoginRequiredMixin, View):
     redirect_field_name = 'redirect_to'
 
     def get(self, request):
+        return render(request, 'ta-homepage.html', {})
 
-        print(request.user)
-        my = getMyUser(request.user)
-
-        if my != None and my.user_type == 'TA':
-            return render(request, 'ta_main.html', {})
-        else:
-            return redirect('/')
 
 
 def getMyUser(user):

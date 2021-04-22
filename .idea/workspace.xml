@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
+      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -33,13 +45,46 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SchedulingApp/static" />
+      <recent name="$PROJECT_DIR$/SchedulingApp/css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.admin_main.html">
     <configuration name="admin_main.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SchedulingProject/SchedulingApp/templates/admin_main.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.admin_main.html" />
+      <item itemvalue="Python.manage" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.admin_main.html" />
+        <item itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
@@ -59,6 +104,16 @@
       <workItem from="1618935662273" duration="1232000" />
       <workItem from="1618966443898" duration="4496000" />
       <workItem from="1619044607120" duration="802000" />
+      <workItem from="1619051438008" duration="4728000" />
+      <workItem from="1619056430442" duration="564000" />
+      <workItem from="1619057133937" duration="43000" />
+      <workItem from="1619057217038" duration="156000" />
+      <workItem from="1619101016606" duration="2450000" />
+      <workItem from="1619103645506" duration="75000" />
+      <workItem from="1619104235539" duration="104000" />
+      <workItem from="1619104750412" duration="103000" />
+      <workItem from="1619106833478" duration="3367000" />
+      <workItem from="1619113298876" duration="570000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>
@@ -116,5 +171,8 @@
     <MESSAGE value="Styled Account Creation page by adding HTML and CSS styles." />
     <MESSAGE value="Added HTML to apply CSS styles to login page." />
     <option name="LAST_COMMIT_MESSAGE" value="Added HTML to apply CSS styles to login page." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SchedulingProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1619053313938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
