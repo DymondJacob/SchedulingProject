@@ -176,10 +176,11 @@ select {
 .section-info{
     font-size:0.8vw;
     font-weight:bold;
+    width:100%;
 }
 
 .section-number{
-    width:30%;
+    width:40%;
 }
 
 /* HOMEPAGE STYLES */
