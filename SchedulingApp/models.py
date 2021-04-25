@@ -18,13 +18,23 @@ class MyUser(models.Model):
     email = models.EmailField(max_length=50)
     user_type = models.CharField(max_length=2, choices=USER_TYPE)
 
+class Course(models.Model):
+    name = models.CharField(max_length=20)
+    subject = models.CharField(max_length=50)
+    course_number = models.CharField(max_length=50)
+    section_instructor = models.CharField(max_length=50)
+    section_ta = models.CharField(max_length=50)
+    lab_instructor = models.CharField(max_length=50)
+    lab_ta = models.CharField(max_length=50)
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        MyUser.objects.create(user=instance, user_pk=instance.id)
 
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.myuser.save()
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         MyUser.objects.create(user=instance, user_pk=instance.id)
+#
+#
+# @receiver(post_save, sender=User)
+# def save_user_profile(sender, instance, **kwargs):
+#     instance.myuser.save()
