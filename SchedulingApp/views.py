@@ -14,15 +14,17 @@ from .models import MyUser, Course
 
 class loginView(View):
     def get(self, request):
+        print(request)
         return render(request, 'login.html', {})
 
     def post(self, request):
         pw = request.POST["pw"]
         email = request.POST["email"]
+        print(request.POST)
         try:
-            login_user = MyUser.objects.get(email=email)
-            # login(request, login_user)
+            login_user = MyUser.objects.get(email=email, password=pw)
             print(login_user)
+
 
             if login_user == None:
                 return render(request, 'login.html', {
@@ -40,6 +42,13 @@ class loginView(View):
                 "alert": True,
                 "message": "login failed."
             })
+        request.session["name"] = login_myuser.name
+        request.session["password"] = login_myuser.password
+        request.session["email"] = login_myuser.email
+        request.session["user_type"] = login_myuser.user_type
+        print(request.session["name"])
+        print(request.session["email"])
+        print(request.session["password"])
 
 
 
@@ -56,12 +65,12 @@ class loginView(View):
             })
 
 
-class AdminMainView(LoginRequiredMixin, View):
+class AdminMainView(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
 
     def get(self, request):
-        return render(request, 'admin-homepage.html', {})
+        return render(request, 'admin-homepage.html')
 
 
     def post(self, request):
@@ -121,11 +130,9 @@ class CreateAccount(LoginRequiredMixin, View):
         return render(request, 'admin-homepage.html', {})
 
 
-class CreateCourse(LoginRequiredMixin, View):
+class CreateCourse(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
-
-
 
     def get(self, request):
         obj = MyUser.objects.all()
