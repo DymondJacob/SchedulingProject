@@ -253,12 +253,26 @@ select {
     margin-bottom:2.5%;
     margin-top:-2.5%;
     width:100%;
+    justify-content:space-between;
+}
+
+.left-buttons{
+    display:flex;
+    flex-direction:row;
+    width:50%;
+}
+
+.right-buttons{
+    display:flex;
+    flex-direction:row;
+    width:50%;
+    justify-content:flex-end;
 }
 
 .button{
     font-size:1.25vw;
     font-weight:bold;
-    padding: 1.5% 2% 1.5% 2%;
+    padding: 2.5%;
 }
 
 .acct-button{
@@ -268,6 +282,5 @@ select {
 
 .logout-button{
     background-color:#FFBD00;
-    margin-left:82.5%;
     text-transform:uppercase;
 }

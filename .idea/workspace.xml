@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/addsection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/assignuser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/createassignment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/deleteaccount.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/deletecourse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/deletesection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/editaccount.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/editassignments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/editremoveuser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/editsection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/findcourse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/finduser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/viewassignments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
