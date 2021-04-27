@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +130,7 @@
       <workItem from="1619377282913" duration="935000" />
       <workItem from="1619382155556" duration="5754000" />
       <workItem from="1619482998342" duration="3059000" />
+      <workItem from="1619566376991" duration="1239000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>

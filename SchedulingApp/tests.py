@@ -89,3 +89,90 @@ class CreateCourse(TestCase):
         response = self.client.get(self.url)
         self.assertContains(response, '<input class="form-input" id="create_pw" name="course_number" type="text" placeholder="course number">',
                         status_code=200, msg_prefix="Create Course does not contain course number input")
+
+
+class CreateAccount(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('createaccount')
+
+    def test_create_account_get(self):
+        response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 200, msg="GET Request to CreateCourse Failed")
+        self.assertTemplateUsed(response, 'createaccount.html', msg_prefix="Wrong Template was Rendered for Create Account")
+
+    def test_create_account_form(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<form action="/createaccount.html" method="post">',
+                            status_code=200, msg_prefix="Create Account does not contain form")
+
+    def test_create_name_field(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<input class="form-input" id="create_id" name="name" type="text" placeholder="username">',
+                        status_code=200, msg_prefix="Create Account does not contain course name input")
+    def test_create_email_field(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<input class="form-input" id="create_email" name="email" type="email" placeholder="email">',
+                        status_code=200, msg_prefix="Create Account does not contain course email input")
+    def test_create_password_field(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<input class="form-input" id="create_pw" name="pw" type="text" placeholder="password">',
+                        status_code=200, msg_prefix="Create Account does not contain course password input")
+
+
+class InstructorPage(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('instructor-homepage')
+
+    def test_create_account_get(self):
+        response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 200, msg="GET Request to CreateCourse Failed")
+        self.assertTemplateUsed(response, 'instructor-homepage.html', msg_prefix="Wrong Template was Rendered for Create Account")
+
+    def test_instructor_planner(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<div class="header-title">UWM Instructor Planner</div>',
+                            status_code=200, msg_prefix="Instructor Planner HTML is on incorrect page")
+
+    def test_view_assignments(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="viewassignments.html">',
+                        status_code=200, msg_prefix="Create Account does not contain view assignment input")
+    def test_add_section(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="addsection.html">',
+                        status_code=200, msg_prefix="Create Account does not contain add course section link")
+    def test_find_course(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="findcourse.html">',
+                        status_code=200, msg_prefix="Create Account does not contain find course link")
+
+    def test_log_out(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="/" class="button logout-button">Log Out</a>',
+                            status_code=200, msg_prefix="Instructor Planner doesn't contain logout")
+
+class TAPage(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('ta-homepage')
+
+    def test_create_account_get(self):
+        response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 200, msg="GET Request to CreateCourse Failed")
+        self.assertTemplateUsed(response, 'ta-homepage.html', msg_prefix="Wrong Template was Rendered for TA Input")
+
+    def test_ta_planner(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<div class="header-title">UWM TA Planner</div>',
+                            status_code=200, msg_prefix="TA Planner HTML is on incorrect page")
+
+    def test_view_assignments(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="viewassignments.html">',
+                        status_code=200, msg_prefix="TA Planner does not contain view assignment link")
+    def test_log_out(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="/" class="button logout-button">Log Out</a>',
+                        status_code=200, msg_prefix="TA Planner doesn't contain logout")

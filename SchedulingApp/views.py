@@ -95,7 +95,7 @@ class AdminMainView(View):
             })
 
 
-class InstructorMainView(LoginRequiredMixin, View):
+class InstructorMainView(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
 
@@ -103,7 +103,7 @@ class InstructorMainView(LoginRequiredMixin, View):
         return render(request, 'instructor-homepage.html', {})
 
 
-class TaMainView(LoginRequiredMixin, View):
+class TaMainView(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
 
@@ -111,7 +111,7 @@ class TaMainView(LoginRequiredMixin, View):
         return render(request, 'ta-homepage.html', {})
 
 
-class CreateAccount(LoginRequiredMixin, View):
+class CreateAccount(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
 
