@@ -153,13 +153,77 @@ class CreateCourse(View):
         return render(request, 'admin-homepage.html', {})
 
 
+class CreateAssignment(View):
+
+    def get(self, request):
+        return render(request, 'createassignment.html', {})
+
+class ViewAssignment(View):
+
+    def get(self, request):
+        return render(request, 'viewassignments.html', {})
+
+class EditAssignment(View):
+
+    def get(self, request):
+        return render(request, 'editassignments.html', {})
 
 
+class AddSection(View):
 
-#
-# def getMyUser(user):
-#     try:
-#         my = MyUser.objects.get(user=user)
-#         return my
-#     except ObjectDoesNotExist:
-#         return None
+    def get(self, request):
+        return render(request, 'addsection.html', {})
+
+class AssignUser(View):
+
+    def get(self, request):
+        return render(request, 'assignuser.html', {})
+
+
+class DeleteAccount(View):
+
+    def get(self, request):
+        return render(request, 'deleteaccount.html', {})
+
+
+class DeleteCourse(View):
+
+    def get(self, request):
+        return render(request, 'deletecourse.html', {})
+
+class DeleteSection(View):
+
+    def get(self, request):
+        return render(request, 'deletesection.html', {})
+
+class EditAccount(View):
+
+    def get(self, request):
+        return render(request, 'editaccount.html', {})
+
+class EditCourse(View):
+
+    def get(self, request):
+        return render(request, 'editcourse.html', {})
+
+
+class EditRemoveUser(View):
+
+    def get(self, request):
+        return render(request, 'editremoveuser.html', {})
+
+
+class EditSection(View):
+
+    def get(self, request):
+        return render(request, 'editsection.html', {})
+
+class FindCourse(View):
+
+    def get(self, request):
+        return render(request, 'findcourse.html', {})
+
+class FindUser(View):
+
+    def get(self, request):
+        return render(request, 'finduser.html', {})
