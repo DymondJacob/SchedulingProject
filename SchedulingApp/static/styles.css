@@ -65,11 +65,36 @@ a{
     padding-bottom:0;
 }
 
+.form-buttons-cont-vert{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    margin:auto;
+    padding:5%;
+    padding-bottom:0;
+    padding-top:2.5%;
+}
+
 .form-button{
     display:flex;
     flex-direction:column;
     margin-bottom:2.5%;
     width:42.5%;
+}
+
+.form-button-vert{
+    align-items:center;
+    cursor:pointer;
+    display:flex;
+    flex-direction:row;
+    font-size:1vw;
+    font-weight:bold;
+    margin-bottom:2.5%;
+    width:42.5%;
+}
+
+.form-button-vert i{
+    margin-right:5%;
 }
 
 .form-button:nth-child(odd){
@@ -86,6 +111,7 @@ a{
 .form-input{
     border:none;
     font-size:0.8vw;
+    outline:none;
     padding:5%;
     width:100%;
 }
@@ -121,6 +147,40 @@ a{
     border:none;
     cursor:pointer;
     text-transform:uppercase;
+}
+
+/* DROPDOWN STYLES */
+select {
+    border:none;
+    font-size:0.8vw;
+    outline:none;
+    padding:4.5%;
+    width:90%;
+}
+
+#select-subject{
+    width:112.5%;
+}
+
+/* COURSE CREATION */
+.section-cont{
+    align-items:center;
+    background-color:#fff;
+    display:flex;
+    flex-direction:row;
+    margin-bottom:2.5%;
+    padding:1.5% 2.5% 1.5% 2.5%;
+    width:95%;
+}
+
+.section-info{
+    font-size:0.8vw;
+    font-weight:bold;
+    width:100%;
+}
+
+.section-number{
+    width:40%;
 }
 
 /* HOMEPAGE STYLES */

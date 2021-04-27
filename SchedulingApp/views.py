@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.db.models import Q
 
-from .models import MyUser
+from .models import MyUser, Course
 
 class loginView(View):
     def get(self, request):
@@ -72,7 +72,7 @@ class AdminMainView(LoginRequiredMixin, View):
         userExist = User.objects.filter(Q(email=email)).exists()
 
         if userExist:
-            return render(request, 'admin_main.html', {
+            return render(request, 'createaccount.html', {
                 "alert": True,
                 "message": "이미 존재하는 id거나 email입니다",
             })
@@ -80,7 +80,7 @@ class AdminMainView(LoginRequiredMixin, View):
             newUser = MyUser.objects.create(password=pw, email=email)
             newUser.myuser.user_type = user_type
             newUser.save()
-            return render(request, 'admin_main.html', {
+            return render(request, 'createaccount.html', {
                 "alert": True,
                 "message": "account created",
             })
@@ -102,10 +102,57 @@ class TaMainView(LoginRequiredMixin, View):
         return render(request, 'ta-homepage.html', {})
 
 
+class CreateAccount(LoginRequiredMixin, View):
+    login_url = '/'
+    redirect_field_name = 'redirect_to'
 
-def getMyUser(user):
-    try:
-        my = MyUser.objects.get(user=user)
-        return my
-    except ObjectDoesNotExist:
-        return None
+    def get(self, request):
+        return render(request, 'createaccount.html', {})
+
+    def post(self, request):
+        name = request.POST['name']
+        email = request.POST["email"]
+        pw = request.POST["pw"]
+        status = request.POST['user_type']
+        print(request.POST)
+
+
+        MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
+        return render(request, 'admin-homepage.html', {})
+
+
+class CreateCourse(LoginRequiredMixin, View):
+    login_url = '/'
+    redirect_field_name = 'redirect_to'
+
+
+
+    def get(self, request):
+        obj = MyUser.objects.all()
+        return render(request, 'createcourse.html', {"obj": obj})
+
+    def post(self, request):
+        name = request.POST['name']
+        subject = request.POST['select-subject']
+        course_number = request.POST['course_number']
+        section_instructor = request.POST['section-instructor']
+        section_ta = request.POST['section-ta']
+        lab_instructor = request.POST['lab-instructor']
+        lab_ta = request.POST['lab-ta']
+        x = Course.objects.create(name=name, subject=subject, course_number=course_number, section_instructor=section_instructor,
+        section_ta=section_ta, lab_instructor=lab_instructor, lab_ta=lab_ta)
+        x.save()
+        print(request.POST)
+        return render(request, 'admin-homepage.html', {})
+
+
+
+
+
+#
+# def getMyUser(user):
+#     try:
+#         my = MyUser.objects.get(user=user)
+#         return my
+#     except ObjectDoesNotExist:
+#         return None
