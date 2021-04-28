@@ -1,18 +1,47 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+
+<!-- css -->
+    {% load static %}
+<link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: Login</title>
+
+</head>
     <body>
+    <div class="form-cont">
+        <div class="header">
+            <div class="header-title header-title-form">UWM Schedule Planner</div>
+        </div>
+        <div class="form-title">Login</div>
         <form action="/" method="post">
             {% csrf_token %}
-            <input id="login_id" name="id" type="text" placeholder="id">
-            <input id="login_pw" name="pw" type="password" placeholder="password">
-            <input id="login_email" name="email" type="email" placeholder="email">
-            <input type="submit" value="login">
+            <div class="form-buttons-cont">
+                 <div class="form-button">
+                    <div class="form-button-title">Email</div>
+                    <input class="form-input" id="login_email" name="email" type="text" placeholder="email">
+                </div>
+                <div class="form-button">
+                    <div class="form-button-title">Password</div>
+                    <input class="form-input" id="login_pw" name="pw" type="password" placeholder="password">
+                </div>
+                <div class="action-button-cont">
+                    <input class="button action-button" type="submit" value="login">
+                </div>
+            </div>
         </form>
+    </div>
     </body>
 
     <script>
-        {% if alert %}
-            var message = "{{message}}";
-            alert(message)
-        {% endif %}
+        // {% if alert %}
+        //     var message = "{{message}}";
+        //     alert(message)
+        // {% endif %}
     </script>
 </html>

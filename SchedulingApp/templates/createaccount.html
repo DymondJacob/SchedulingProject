@@ -20,13 +20,13 @@
                 <div class="header-title header-title-form">UWM Schedule Planner</div>
             </div>
             <div class="form-title">Create New Account</div>
-            <form action="/main/admin" method="post">
+            <form action="/createaccount.html" method="post">
                 {% csrf_token %}
                 <div class="form-buttons-cont">
-<!--                    <div class="form-button">-->
-<!--                        <div class="form-button-title">Username</div>-->
-<!--                        <input class="form-input" id="create_id" name="id" type="text" placeholder="username">-->
-<!--                    </div>-->
+                    <div class="form-button">
+                        <div class="form-button-title">Name</div>
+                        <input class="form-input" id="create_id" name="name" type="text" placeholder="username">
+                    </div>
                     <div class="form-button">
                         <div class="form-button-title">Email</div>
                         <input class="form-input" id="create_email" name="email" type="email" placeholder="email">

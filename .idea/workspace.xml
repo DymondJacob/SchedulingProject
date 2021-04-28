@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor_main.html" afterDir="false" />
+    <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor_,main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -17,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -35,6 +35,66 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SchedulingApp/static" />
+      <recent name="$PROJECT_DIR$/SchedulingApp/css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests in tests.py">
+    <configuration name="admin_main.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SchedulingProject/SchedulingApp/templates/admin_main.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SchedulingApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/SchedulingApp/tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.admin_main.html" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python tests.Unittests in tests.py" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests in tests.py" />
+        <item itemvalue="JavaScript Debug.admin_main.html" />
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,7 +108,52 @@
       <workItem from="1618754520042" duration="3101000" />
       <workItem from="1618757704867" duration="1231000" />
       <workItem from="1618761702440" duration="1175000" />
+      <workItem from="1618935662273" duration="1232000" />
+      <workItem from="1618966443898" duration="4496000" />
+      <workItem from="1619044607120" duration="802000" />
+      <workItem from="1619051438008" duration="4728000" />
+      <workItem from="1619056430442" duration="564000" />
+      <workItem from="1619057133937" duration="43000" />
+      <workItem from="1619057217038" duration="156000" />
+      <workItem from="1619101016606" duration="2450000" />
+      <workItem from="1619103645506" duration="75000" />
+      <workItem from="1619104235539" duration="104000" />
+      <workItem from="1619104750412" duration="103000" />
+      <workItem from="1619106833478" duration="3367000" />
+      <workItem from="1619113298876" duration="570000" />
+      <workItem from="1619120683587" duration="671000" />
+      <workItem from="1619121839394" duration="1334000" />
+      <workItem from="1619126280839" duration="1635000" />
+      <workItem from="1619127925901" duration="7000" />
+      <workItem from="1619275097178" duration="6492000" />
+      <workItem from="1619317047148" duration="4412000" />
+      <workItem from="1619377282913" duration="935000" />
+      <workItem from="1619382155556" duration="5754000" />
+      <workItem from="1619482998342" duration="3059000" />
+      <workItem from="1619566376991" duration="1239000" />
     </task>
+    <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
+      <created>1618952774556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618952774556</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Styled Account Creation page by adding HTML and CSS styles.">
+      <created>1618971217208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618971217208</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added HTML to apply CSS styles to login page.">
+      <created>1619045112605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619045112606</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -59,11 +164,33 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="sprint-1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added admin homepage and CSS styles." />
+    <MESSAGE value="Styled Account Creation page by adding HTML and CSS styles." />
+    <MESSAGE value="Added HTML to apply CSS styles to login page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added HTML to apply CSS styles to login page." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SchedulingProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1619053313938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SchedulingProject$Unittests_in_tests_py.coverage" NAME="Unittests in tests.py Coverage Results" MODIFIED="1619383837176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SchedulingApp" />
   </component>
 </project>
