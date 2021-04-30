@@ -66,9 +66,6 @@ class loginView(View):
 
 
 class AdminMainView(View):
-    login_url = '/'
-    redirect_field_name = 'redirect_to'
-
     def get(self, request):
         return render(request, 'admin-homepage.html')
 
@@ -95,15 +92,12 @@ class AdminMainView(View):
             })
 
 
-class InstructorMainView(LoginRequiredMixin, View):
-    login_url = '/'
-    redirect_field_name = 'redirect_to'
-
+class InstructorMainView(View):
     def get(self, request):
         return render(request, 'instructor-homepage.html', {})
 
 
-class TaMainView(LoginRequiredMixin, View):
+class TaMainView(View):
     login_url = '/'
     redirect_field_name = 'redirect_to'
 
@@ -111,10 +105,7 @@ class TaMainView(LoginRequiredMixin, View):
         return render(request, 'ta-homepage.html', {})
 
 
-class CreateAccount(LoginRequiredMixin, View):
-    login_url = '/'
-    redirect_field_name = 'redirect_to'
-
+class CreateAccount(View):
     def get(self, request):
         return render(request, 'createaccount.html', {})
 
@@ -131,9 +122,6 @@ class CreateAccount(LoginRequiredMixin, View):
 
 
 class CreateCourse(View):
-    login_url = '/'
-    redirect_field_name = 'redirect_to'
-
     def get(self, request):
         obj = MyUser.objects.all()
         return render(request, 'createcourse.html', {"obj": obj})
