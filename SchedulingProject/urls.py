@@ -40,4 +40,5 @@ urlpatterns = [
     path('createassignment.html', CreateAssignment.as_view(), name='createassignment'),
     path('viewassignments.html', ViewAssignment.as_view(), name='viewassignments'),
     path('editassignments.html', EditAssignment.as_view(), name='editassignments'),
+    path('allcourses.html', AllCourses.as_view(), name='allcourses'),
 ]

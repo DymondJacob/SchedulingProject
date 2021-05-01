@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- css -->
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: All Courses</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-title">UWM Schedule Planner</div>
+    </div>
+
+    <div class="table-cont">
+        <div class="table-title">All Courses</div>
+         <table id="class-table">
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Subject</th>
+                <th>Instructors</th>
+                <th>TAs</th>
+                <th>Sections</th>
+            </tr>
+            {% for Course in obj %}
+            <tr>
+                {% for name in obj %}
+                <td>{{course.name}}</td>
+                {% endfor %}
+                {% for course_number in obj %}
+                <td>{{course.course_number}}</td>
+                {% endfor %}
+                {% for subject in obj %}
+                <td>{{course.subject}}</td>
+                {% endfor %}
+                {% for instructor in obj %}
+                {% if instructor.user_type == "IN" %}
+                <td>{{instructor.name}}</td>
+                {% endif %}
+                {% endfor %}
+                {% for instructor in obj %}
+                {% if instructor.user_type == "TA" %}
+                <td>{{instructor.name}}</td>
+                {% endif %}
+                {% endfor %}
+                {% for numSections in obj %}
+                <td>{{course.numSections}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+     </div>
+
+</body>
+</html>
