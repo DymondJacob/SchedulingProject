@@ -15,7 +15,7 @@ class MyUser(models.Model):
 
     name = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
-    email = models.EmailField(max_length=50)
+    email = models.EmailField(max_length=50, unique = True)
     user_type = models.CharField(max_length=2, choices=USER_TYPE)
 
 class Course(models.Model):

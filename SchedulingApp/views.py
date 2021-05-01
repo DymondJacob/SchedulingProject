@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.db import IntegrityError
+
 
 from .models import MyUser, Course
 
@@ -114,11 +116,19 @@ class CreateAccount(View):
         email = request.POST["email"]
         pw = request.POST["pw"]
         status = request.POST['user_type']
-        print(request.POST)
 
+        userExist = MyUser.objects.filter(email=email).exists()
+        if not userExist:
+            try:
+                MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
+                return redirect('admin-homepage.html')
+            except IntegrityError:
+                pass
 
-        MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
-        return render(request, 'admin-homepage.html', {})
+        return render(request, 'createaccount.html', {
+            "alert": True,
+            "message": "이미 존재하는 email입니다",
+        })
 
 
 class CreateCourse(View):

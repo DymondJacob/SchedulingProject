@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/카카오톡 받은 파일/models/models.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -153,6 +155,8 @@
       <workItem from="1619569714661" duration="39000" />
       <workItem from="1619573673332" duration="3326000" />
       <workItem from="1619893678425" duration="48000" />
+      <workItem from="1619893740139" duration="356000" />
+      <workItem from="1619894126927" duration="283000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>
