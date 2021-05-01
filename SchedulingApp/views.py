@@ -215,3 +215,8 @@ class FindUser(View):
 
     def get(self, request):
         return render(request, 'finduser.html', {})
+
+class AllCourses(View):
+
+    def get(self, request):
+        return render(request, 'allcourses.html', {})
