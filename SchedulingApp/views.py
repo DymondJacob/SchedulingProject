@@ -127,7 +127,7 @@ class CreateAccount(View):
 
         return render(request, 'createaccount.html', {
             "alert": True,
-            "message": "이미 존재하는 email입니다",
+            "message": "The email address is already existed.",
         })
 
 
