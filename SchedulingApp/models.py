@@ -23,9 +23,9 @@ class Course(models.Model):
     subject = models.CharField(max_length=50)
     course_number = models.CharField(max_length=50)
     section_instructor = models.CharField(max_length=50)
-    section_ta = models.CharField(max_length=50)
-    lab_instructor = models.CharField(max_length=50)
     lab_ta = models.CharField(max_length=50)
+    section_number = models.CharField(max_length=50)
+
 
 
 

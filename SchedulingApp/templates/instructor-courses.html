@@ -17,7 +17,7 @@
     </div>
 
     <div class="table-cont">
-        <div class="table-title">All Courses</div>
+        <div class="table-title">My Courses</div>
          <table id="class-table">
             <tr>
                 <th>Name</th>
@@ -28,6 +28,7 @@
                 <th>Sections</th>
             </tr>
             {% for Course in obj %}
+            {% if Course.section_instructor == name %}
             <tr>
                 <td> {{ Course.name }} </td>
                 <td> {{Course.course_number}}</td>
@@ -36,6 +37,7 @@
                 <td>{{Course.lab_ta}}</td>
                 <td>{{Course.section_number}}</td>
             </tr>
+             {% endif %}
             {% endfor %}
         </table>
      </div>

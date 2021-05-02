@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- css -->
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: All Courses</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-title">UWM Schedule Planner</div>
+    </div>
+
+    <div class="table-cont">
+
+        <div class="table-title">Add TA</div>
+        <form action="/addlab.html" method="post">
+            {% csrf_token %}
+         <table id="class-table">
+            <tr>
+                <th>Name</th>
+                <th>Sections</th>
+                <th>TA's</th>
+                <th>Assign TA</th>
+            </tr>
+            {% for Course in obj %}
+             {% if Course.section_instructor == name %}
+            <tr>
+                <td>
+                      <select name="course-name">
+                                <option selected disabled>Choose a Class</option>
+                                <option value={{Course.name}}>{{Course.name}}</option>
+                            </select>
+
+                </td>
+                <td>
+                      <select name="section-number">
+                                <option selected disabled>Choose a Section</option>
+                                <option value={{Course.section_number}}>{{Course.section_number}}</option>
+                            </select>
+
+                </td>
+
+                <td>
+
+                        <select name="section-ta">
+                                <option selected disabled>Choose an TA</option>
+                                {% for tas in ta %}
+                                {% if tas.user_type == "TA" %}
+                                <option value={{tas.name}}>{{tas.name}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+
+                </td>
+                <td><input class="button" type="submit" value="Assign"/></td>
+            </tr>
+             {% endif %}
+            {% endfor %}
+              </form>
+        </table>
+     </div>
+
+</body>
+</html>

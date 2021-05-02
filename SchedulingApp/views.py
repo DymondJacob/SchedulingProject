@@ -141,80 +141,43 @@ class CreateCourse(View):
         subject = request.POST['select-subject']
         course_number = request.POST['course_number']
         section_instructor = request.POST['section-instructor']
-        section_ta = request.POST['section-ta']
-        lab_instructor = request.POST['lab-instructor']
-        lab_ta = request.POST['lab-ta']
+        section_number = request.POST['section-number']
         x = Course.objects.create(name=name, subject=subject, course_number=course_number, section_instructor=section_instructor,
-        section_ta=section_ta, lab_instructor=lab_instructor, lab_ta=lab_ta)
+        section_number=section_number)
         x.save()
         print(request.POST)
         return render(request, 'admin-homepage.html', {})
 
 
-class CreateAssignment(View):
+class InstructorCourses(View):
 
     def get(self, request):
-        return render(request, 'createassignment.html', {})
+        obj = Course.objects.all()
+        print(request.session['name'])
+        return render(request, 'instructor-courses.html', {"obj": obj, 'name': request.session['name']})
 
-class ViewAssignment(View):
-
-    def get(self, request):
-        return render(request, 'viewassignments.html', {})
-
-class EditAssignment(View):
+class AllCourses(View):
 
     def get(self, request):
-        return render(request, 'editassignments.html', {})
+        obj = Course.objects.all()
+        print(obj[0].name)
+        return render(request, 'allcourses.html', {"obj": obj})
 
-
-class AddSection(View):
-
-    def get(self, request):
-        return render(request, 'addsection.html', {})
-
-class AssignUser(View):
+class AddLab(View):
 
     def get(self, request):
-        return render(request, 'assignuser.html', {})
+        obj = Course.objects.all()
+        user = MyUser.objects.all()
+        print(obj[0].name)
+        name = request.session['name']
+        return render(request, 'addlab.html', {"obj": obj, 'name': name, 'ta': user})
 
+    def post(self, request):
+        classNum = Course.objects.get(section_number=request.POST['section-number'])
+        classNum.lab_ta = request.POST['section-ta']
+        classNum.save()
+        return render(request, 'instructor-homepage.html', {})
 
-class DeleteAccount(View):
-
-    def get(self, request):
-        return render(request, 'deleteaccount.html', {})
-
-
-class DeleteCourse(View):
-
-    def get(self, request):
-        return render(request, 'deletecourse.html', {})
-
-class DeleteSection(View):
-
-    def get(self, request):
-        return render(request, 'deletesection.html', {})
-
-class EditAccount(View):
-
-    def get(self, request):
-        return render(request, 'editaccount.html', {})
-
-class EditCourse(View):
-
-    def get(self, request):
-        return render(request, 'editcourse.html', {})
-
-
-class EditRemoveUser(View):
-
-    def get(self, request):
-        return render(request, 'editremoveuser.html', {})
-
-
-class EditSection(View):
-
-    def get(self, request):
-        return render(request, 'editsection.html', {})
 
 class FindCourse(View):
 
@@ -226,7 +189,3 @@ class FindUser(View):
     def get(self, request):
         return render(request, 'finduser.html', {})
 
-class AllCourses(View):
-
-    def get(self, request):
-        return render(request, 'allcourses.html', {})

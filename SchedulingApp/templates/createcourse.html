@@ -199,15 +199,19 @@
                         <!-- FORM ID NEEDS TO BE CHANGED -->
                         <input class="form-input" id="create_pw" name="course_number" type="text" placeholder="course number">
                     </div>
+                     <div class="form-button">
+                        <div class="form-button-title">Section Number</div>
+                        <!-- FORM ID NEEDS TO BE CHANGED -->
+                        <input class="form-input" id="section-number" name="section-number" type="text" placeholder="section number">
+                    </div>
                 </div>
 
                 <div class="form-buttons-cont-vert">
-                    <div class="form-button-vert"><i class="fas fa-plus"></i> Add Section</div>
+                    <div class="form-button-vert"><i class="fas fa-plus"></i> Add Instructor</div>
 
                     <!-- When the user clicks add section, the following should appear: -->
                     <div class="section-cont">
                         <!-- Section number needs to increment each time a new section is created -->
-                        <div class="section-info section-number">Section # 000</div>
                         <div class="section-info section-instructor">
                             <select name="section-instructor">
                                 <option selected disabled>Choose an instructor</option>
@@ -218,44 +222,34 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="section-info section-ta">
-                            <select name="section-ta">
-                                <option selected disabled>Choose a TA</option>
-                                {% for instructor in obj %}
-                                {% if instructor.user_type == "TA" %}
-                                <option value={{instructor.name}}>{{instructor.name}}</option>
-                                {% endif %}
-                                {% endfor %}
-                            </select>
-                        </div>
                     </div>
 
-                    <div class="form-button-vert"><i class="fas fa-plus"></i> Add Lab</div>
+<!--                    <div class="form-button-vert"><i class="fas fa-plus"></i> Add Lab</div>-->
                     <!-- When the user clicks add section, the following should appear: -->
-                    <div class="section-cont">
-                        <!-- Section number needs to increment each time a new lab is created -->
-                        <div class="section-info section-number">Lab # 000</div>
-                        <div class="section-info section-instructor">
-                            <select name="lab-instructor">
-                                <option selected disabled>Choose an instructor</option>
-                                {% for instructor in obj %}
-                                {% if instructor.user_type == "IN" %}
-                                <option value={{instructor.name}}>{{instructor.name}}</option>
-                                {% endif %}
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="section-info section-ta">
-                            <select name="lab-ta">
-                                <option selected disabled>Choose a TA</option>
-                                {% for instructor in obj %}
-                                {% if instructor.user_type == "TA" %}
-                                <option value={{instructor.name}}>{{instructor.name}}</option>
-                                {% endif %}
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
+<!--                    <div class="section-cont">-->
+<!--                        &lt;!&ndash; Section number needs to increment each time a new lab is created &ndash;&gt;-->
+<!--                        <div class="section-info section-number">Lab # 000</div>-->
+<!--                        <div class="section-info section-instructor">-->
+<!--                            <select name="lab-instructor">-->
+<!--                                <option selected disabled>Choose an instructor</option>-->
+<!--                                {% for instructor in obj %}-->
+<!--                                {% if instructor.user_type == "IN" %}-->
+<!--                                <option value={{instructor.name}}>{{instructor.name}}</option>-->
+<!--                                {% endif %}-->
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="section-info section-ta">-->
+<!--                            <select name="lab-ta">-->
+<!--                                <option selected disabled>Choose a TA</option>-->
+<!--                                {% for instructor in obj %}-->
+<!--                                {% if instructor.user_type == "TA" %}-->
+<!--                                <option value={{instructor.name}}>{{instructor.name}}</option>-->
+<!--                                {% endif %}-->
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
 
 
