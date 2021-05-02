@@ -65,36 +65,11 @@ a{
     padding-bottom:0;
 }
 
-.form-buttons-cont-vert{
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    margin:auto;
-    padding:5%;
-    padding-bottom:0;
-    padding-top:2.5%;
-}
-
 .form-button{
     display:flex;
     flex-direction:column;
     margin-bottom:2.5%;
     width:42.5%;
-}
-
-.form-button-vert{
-    align-items:center;
-    cursor:pointer;
-    display:flex;
-    flex-direction:row;
-    font-size:1vw;
-    font-weight:bold;
-    margin-bottom:2.5%;
-    width:42.5%;
-}
-
-.form-button-vert i{
-    margin-right:5%;
 }
 
 .form-button:nth-child(odd){
@@ -106,6 +81,10 @@ a{
     font-weight:bold;
     margin-bottom:2.5%;
     text-transform:uppercase;
+}
+
+.form-button-title i{
+    margin-right:5%;
 }
 
 .form-input{
@@ -139,6 +118,7 @@ a{
     flex-direction:row;
     justify-content:flex-end;
     padding:5%;
+    padding-top:0;
     width:90%;
 }
 
@@ -155,12 +135,9 @@ select {
     font-size:0.8vw;
     outline:none;
     padding:4.5%;
-    width:90%;
+    width:110%;
 }
 
-#select-subject{
-    width:112.5%;
-}
 
 /* COURSE CREATION */
 .section-cont{
@@ -170,7 +147,7 @@ select {
     flex-direction:row;
     margin-bottom:2.5%;
     padding:1.5% 2.5% 1.5% 2.5%;
-    width:95%;
+    width:45%;
 }
 
 .section-info{
@@ -179,9 +156,6 @@ select {
     width:100%;
 }
 
-.section-number{
-    width:40%;
-}
 
 /* HOMEPAGE STYLES */
 
