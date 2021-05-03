@@ -69,7 +69,18 @@ class loginView(View):
 
 class AdminMainView(View):
     def get(self, request):
-        return render(request, 'admin-homepage.html')
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'admin-homepage.html')
 
 
     def post(self, request):
@@ -96,20 +107,50 @@ class AdminMainView(View):
 
 class InstructorMainView(View):
     def get(self, request):
-        return render(request, 'instructor-homepage.html', {})
+        if (request.session['user_type'] == 'AD'):
+            return redirect('admin-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'instructor-homepage.html')
 
 
 class TaMainView(View):
-    login_url = '/'
-    redirect_field_name = 'redirect_to'
-
     def get(self, request):
-        return render(request, 'ta-homepage.html', {})
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'AD'):
+            return redirect('admin-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'ta-homepage.html')
 
 
 class CreateAccount(View):
     def get(self, request):
-        return render(request, 'createaccount.html', {})
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'createaccount.html')
 
     def post(self, request):
         name = request.POST['name']
@@ -133,8 +174,19 @@ class CreateAccount(View):
 
 class CreateCourse(View):
     def get(self, request):
-        obj = MyUser.objects.all()
-        return render(request, 'createcourse.html', {"obj": obj})
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            obj = MyUser.objects.all()
+            return render(request, 'createcourse.html', {"obj": obj})
 
     def post(self, request):
         name = request.POST['name']
@@ -150,11 +202,16 @@ class CreateCourse(View):
 
 
 class InstructorCourses(View):
-
     def get(self, request):
-        obj = Course.objects.all()
-        print(request.session['name'])
-        return render(request, 'instructor-courses.html', {"obj": obj, 'name': request.session['name']})
+        if (request.session['user_type'] != 'IN'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            obj = Course.objects.all()
+            print(request.session['name'])
+            return render(request, 'instructor-courses.html', {"obj": obj, 'name': request.session['name']})
 
 class AllCourses(View):
 
@@ -166,11 +223,23 @@ class AllCourses(View):
 class AddLab(View):
 
     def get(self, request):
-        obj = Course.objects.all()
-        user = MyUser.objects.all()
-        print(obj[0].name)
-        name = request.session['name']
-        return render(request, 'addlab.html', {"obj": obj, 'name': name, 'ta': user})
+
+        if (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        elif (request.session['user_type'] == 'AD'):
+            return redirect('admin-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            obj = Course.objects.all()
+            user = MyUser.objects.all()
+            print(obj[0].name)
+            name = request.session['name']
+            return render(request, 'addlab.html', {"obj": obj, 'name': name, 'ta': user})
 
     def post(self, request):
         classNum = Course.objects.get(section_number=request.POST['section-number'])
@@ -179,13 +248,4 @@ class AddLab(View):
         return render(request, 'instructor-homepage.html', {})
 
 
-class FindCourse(View):
-
-    def get(self, request):
-        return render(request, 'findcourse.html', {})
-
-class FindUser(View):
-
-    def get(self, request):
-        return render(request, 'finduser.html', {})
 
