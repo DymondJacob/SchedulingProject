@@ -171,6 +171,59 @@ class CreateAccount(View):
             "message": "The email address is already existed.",
         })
 
+class EditAccount(View):
+    def get(self, request):
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'editaccount.html')
+
+    def post(self, request):
+        print(request.POST)
+        email = request.POST["email"]
+        pw = request.POST["pw"]
+        new_email = request.POST["new_email"]
+        new_pw = request.POST["new_pw"]
+        status = request.POST['user_type']
+        userExist = MyUser.objects.get(email=email)
+        userExist.email = new_email
+        userExist.password = new_pw
+        userExist.user_type = status
+        userExist.save()
+        print(userExist.email)
+        return render(request, 'editaccount.html')
+
+
+class DeleteAccount(View):
+    def get(self, request):
+        if (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page"
+            })
+        elif (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            return render(request, 'deleteaccount.html')
+
+    def post(self, request):
+        print(request.POST)
+        email = request.POST["email"]
+        userExist = MyUser.objects.get(email=email)
+        userExist.delete()
+        print(userExist.email)
+        return render(request, 'deleteaccount.html')
 
 class CreateCourse(View):
     def get(self, request):
@@ -220,6 +273,38 @@ class AllCourses(View):
         print(obj[0].name)
         return render(request, 'allcourses.html', {"obj": obj})
 
+
+class EditCourse(View):
+
+    def get(self, request):
+        obj = Course.objects.all()
+        print(obj[0].name)
+        return render(request, 'editcourse.html', {"obj": obj})
+
+    def post(self, request):
+        return render(request, 'editcourse.html')
+
+class DeleteCourse(View):
+
+    def get(self, request):
+        obj = Course.objects.all()
+        print(obj[0].name)
+        return render(request, 'deletecourse.html', {"obj": obj})
+
+    def post(self, request):
+        print(request.POST)
+        course_number = request.POST["course_number"]
+        currentCourse = Course.objects.get(course_number=course_number)
+        currentCourse.delete()
+        return render(request, 'admin-homepage.html')
+
+
+class FindUser(View):
+
+    def get(self, request):
+        obj = MyUser.objects.all()
+        return render(request, 'finduser.html', {"obj": obj})
+
 class AddLab(View):
 
     def get(self, request):
@@ -246,6 +331,35 @@ class AddLab(View):
         classNum.lab_ta = request.POST['section-ta']
         classNum.save()
         return render(request, 'instructor-homepage.html', {})
+
+
+class AssignInstructor(View):
+
+    def get(self, request):
+        if (request.session['user_type'] == 'TA'):
+            return redirect('ta-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        elif (request.session['user_type'] == 'IN'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            obj = Course.objects.all()
+            user = MyUser.objects.all()
+            print(obj[0].name)
+            print(len(user))
+            name = request.session['name']
+            return render(request, 'assigninstructor.html', {"obj": obj, 'name': name, 'instructor': user})
+
+    def post(self, request):
+        print(request.POST)
+        classNum = Course.objects.get(section_number=request.POST['section-number'])
+        classNum.section_instructor = request.POST['section-instructor']
+        classNum.save()
+        return render(request, 'admin-homepage.html', {})
 
 
 
