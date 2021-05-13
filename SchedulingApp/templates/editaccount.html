@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- css -->
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: Edit Account</title>
+
+</head>
+    <body>
+
+        <div class="form-cont">
+            <div class="header">
+                <div class="header-title header-title-form">UWM Schedule Planner</div>
+            </div>
+            <div class="form-title">Edit Existing Account</div>
+            <form action="/editaccount.html" method="post">
+                {% csrf_token %}
+                <div class="form-buttons-cont">
+                    <div class="form-button">
+                        <div class="form-button-title">Email</div>
+                        <input class="form-input" id="create_email" name="email" type="email" placeholder="email">
+                    </div>
+                    <div class="form-button">
+                        <div class="form-button-title">New Email</div>
+                        <input class="form-input" id="new_email" name="new_email" type="email" placeholder="new email">
+                    </div>
+                    <div class="form-button">
+                        <div class="form-button-title">Password</div>
+                        <input class="form-input" id="create_pw" name="pw" type="text" placeholder="password">
+                    </div>
+                      <div class="form-button">
+                        <div class="form-button-title">New Password</div>
+                        <input class="form-input" id="new_pw" name="new_pw" type="text" placeholder="password">
+                    </div>
+
+                    <div class="form-button">
+                        <div class="form-button-title">New Status</div>
+                        <div class="form-radios">
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "TA">
+                                <div class="radio-title">TA</div>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "IN">
+                                <div class="radio-title">Instructor</div>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="user_type" value = "AD">
+                                <div class="radio-title">Admin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-button-cont">
+                    <input class="button action-button" type="submit" value="Confirm Edit">
+                </div>
+            </form>
+        </div>
+
+    </body>
+
+    <script>
+        {% if alert %}
+            var message = "{{message}}";
+            alert(message)
+        {% endif %}
+    </script>
+</html>

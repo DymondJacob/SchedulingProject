@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- css -->
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: All People</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-title">UWM Schedule Planner</div>
+    </div>
+
+    <div class="table-cont">
+        <div class="table-title">All People</div>
+         <table id="class-table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            {% for Person in obj %}
+            <tr>
+                <td> {{ Person.name }} </td>
+                <td> {{Person.email}}</td>
+                <td> {{ Person.user_type }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+     </div>
+
+</body>
+</html>
