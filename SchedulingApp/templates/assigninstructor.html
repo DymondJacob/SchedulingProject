@@ -30,7 +30,7 @@
         <div class="table-title">Add Instructor</div>
         <form action="/assigninstructor.html" method="post">
             {% csrf_token %}
-         <table id="class-table">
+         <table id="class-table" class="edit-table">
             <tr>
                 <th>Name</th>
                 <th>Sections</th>
@@ -39,33 +39,24 @@
             </tr>
             {% for Course in obj %}
             <tr>
+                <td>{{Course.name}}</td>
                 <td>
-                      <select name="course-name">
-                                <option value={{Course.name}}>{{Course.name}}</option>
-                            </select>
-
+                    <select name="section-number" class="table-select">
+                        <option selected disabled>Choose a Section</option>
+                        <option value={{Course.section_number}}>{{Course.section_number}}</option>
+                    </select>
                 </td>
                 <td>
-                      <select name="section-number">
-                                <option selected disabled>Choose a Section</option>
-                                <option value={{Course.section_number}}>{{Course.section_number}}</option>
-                            </select>
-
+                    <select name="section-instructor" class="table-select">
+                        <option selected disabled>Choose an Instructor</option>
+                        {% for instructors in instructor %}
+                        {% if instructors.user_type == "IN" %}
+                        <option value={{instructors.name}}>{{instructors.name}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
                 </td>
-
-                <td>
-
-                        <select name="section-instructor">
-                                <option selected disabled>Choose an Instructor</option>
-                                {% for instructors in instructor %}
-                                {% if instructors.user_type == "IN" %}
-                                <option value={{instructors.name}}>{{instructors.name}}</option>
-                                {% endif %}
-                                {% endfor %}
-                            </select>
-
-                </td>
-                <td><input class="button" type="submit" value="Assign"/></td>
+                <td><input class="button edit-button" type="submit" value="Assign"/></td>
             </tr>
             {% endfor %}
               </form>

@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/assigninstructor.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/assigninstructor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -167,7 +169,7 @@
       <workItem from="1620936881728" duration="532000" />
       <workItem from="1621037704045" duration="3530000" />
       <workItem from="1621089923189" duration="251000" />
-      <workItem from="1621090194169" duration="1866000" />
+      <workItem from="1621090194169" duration="4696000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>
@@ -204,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621090845359</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed logout button styles.">
+      <created>1621092113401</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621092113401</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
