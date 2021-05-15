@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
+    <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Editing log out button styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +166,8 @@
       <workItem from="1620869904238" duration="5498000" />
       <workItem from="1620936881728" duration="532000" />
       <workItem from="1621037704045" duration="3530000" />
-      <workItem from="1621089923189" duration="196000" />
+      <workItem from="1621089923189" duration="251000" />
+      <workItem from="1621090194169" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>
@@ -187,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619045112606</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Editing log out button styles.">
+      <created>1621090160291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621090160291</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +231,8 @@
     <MESSAGE value="Added admin homepage and CSS styles." />
     <MESSAGE value="Styled Account Creation page by adding HTML and CSS styles." />
     <MESSAGE value="Added HTML to apply CSS styles to login page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added HTML to apply CSS styles to login page." />
+    <MESSAGE value="Editing log out button styles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Editing log out button styles." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SchedulingProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1619053313938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

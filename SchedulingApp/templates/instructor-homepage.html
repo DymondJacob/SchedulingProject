@@ -62,23 +62,20 @@
         </div>
         <div class="half-cont right-cont">
 
-            <div class="block">
+<div class="block">
                 <div class="block-title">My Account</div>
                 <div class="sub-block">
-                    <div class="block-icon">A</div>
-                    <div class="block-info">
-                        <div class="sub-block-title">{{obj}}</div>
-                        <div class="sub-block-desc">Role: Administrator</div>
+                    <div class="block-icon">I</div>
+                    <div class="profile-info">
+                        {% csrf_token %}
+                        <div class="info-cont">
+                            <div class="sub-block-title">{{obj}}</div>
+                            <div class="sub-block-desc">Role: Instructor</div>
+                        </div>
+                        <div class="logout-cont">
+                            <a href="/" class="button logout-button">Log Out</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="buttons-cont">
-                <div class="left-buttons">
-                    <div class="button acct-button">View Profile</div>
-                    <div class="button acct-button">Edit Profile</div>
-                </div>
-                <div class="right-buttons">
-                    <a href="/" class="button logout-button">Log Out</a>
                 </div>
             </div>
             <div class="block">

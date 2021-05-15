@@ -221,7 +221,7 @@ select {
     margin-top:2%;
 }
 
-.block-info{
+.profile-info{
     width:100%;
     display:flex;
     flex-direction:row;
@@ -230,7 +230,7 @@ select {
 .info-cont{
     display:flex;
     flex-direction:column;
-    width:20%;
+    width:118.5%;
 }
 
 .buttons-cont{
@@ -267,12 +267,13 @@ select {
 }
 
 .logout-cont{
-    width:50%;
     justify-self:flex-end;
-    margin-top:10%;
+    margin-top:8.5%;
+    width:30%;
 }
 
 .logout-button{
+    padding:7.5%;
     background-color:#FFBD00;
     text-transform:uppercase;
 }
