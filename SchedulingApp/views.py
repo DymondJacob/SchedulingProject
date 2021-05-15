@@ -80,7 +80,7 @@ class AdminMainView(View):
                 "message": "You can't access this page, "
             })
         else:
-            return render(request, 'admin-homepage.html')
+            return render(request, 'admin-homepage.html', {'obj': request.session['name']})
 
 
     def post(self, request):
@@ -118,7 +118,7 @@ class InstructorMainView(View):
                 "message": "You can't access this page, "
             })
         else:
-            return render(request, 'instructor-homepage.html')
+            return render(request, 'instructor-homepage.html',  {'obj': request.session['name']})
 
 
 class TaMainView(View):
@@ -134,7 +134,8 @@ class TaMainView(View):
                 "message": "You can't access this page, "
             })
         else:
-            return render(request, 'ta-homepage.html')
+            print(request.session['name'])
+            return render(request, 'ta-homepage.html', {'obj': request.session['name']})
 
 
 class CreateAccount(View):
@@ -266,6 +267,18 @@ class InstructorCourses(View):
             print(request.session['name'])
             return render(request, 'instructor-courses.html', {"obj": obj, 'name': request.session['name']})
 
+class TaAssignments(View):
+    def get(self, request):
+        if (request.session['user_type'] != 'TA'):
+            return redirect('instructor-homepage.html', {
+                "alert": True,
+                "message": "You can't access this page, "
+            })
+        else:
+            obj = Course.objects.all()
+            print(request.session['name'])
+            return render(request, 'ta-assignments.html', {"obj": obj})
+
 class AllCourses(View):
 
     def get(self, request):
@@ -282,7 +295,22 @@ class EditCourse(View):
         return render(request, 'editcourse.html', {"obj": obj})
 
     def post(self, request):
-        return render(request, 'editcourse.html')
+        print(request.POST)
+        name = request.POST["course_name"]
+        editCourse = Course.objects.get(name=name)
+        if request.POST['edit_number'] != '':
+            editCourse.course_number = request.POST['edit_number']
+        if request.POST['subject'] != '':
+            editCourse.subject = request.POST['subject']
+        if request.POST['instructor'] != '':
+            editCourse.section_instructor = request.POST['instructor']
+        if request.POST['ta'] != '':
+            editCourse.lab_ta = request.POST['ta']
+        if request.POST['section'] != '':
+            editCourse.section_number = request.POST['section']
+        editCourse.save()
+        obj = Course.objects.all()
+        return render(request, 'editcourse.html', {"obj": obj})
 
 class DeleteCourse(View):
 

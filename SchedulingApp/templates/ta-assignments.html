@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- css -->
+<link href="../static/styles.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<title>UWM Schedule Planner: All Assignments</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-title">UWM Schedule Planner</div>
+    </div>
+
+    <div class="table-cont">
+        <div class="table-title">My Assignments</div>
+         <table id="class-table">
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Subject</th>
+                <th>Instructors</th>
+                <th>TAs</th>
+                <th>Sections</th>
+            </tr>
+            {% for Course in obj %}
+            {% if Course.lab_ta == name %}
+            <tr>
+                <td> {{ Course.name }} </td>
+                <td> {{Course.course_number}}</td>
+                <td> {{Course.subject}}</td>
+                <td>{{Course.section_instructor}}</td>
+                <td>{{Course.lab_ta}}</td>
+                <td>{{Course.section_number}}</td>
+            </tr>
+             {% endif %}
+            {% endfor %}
+        </table>
+     </div>
+
+</body>
+</html>

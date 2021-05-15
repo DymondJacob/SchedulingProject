@@ -19,7 +19,7 @@
     <div class="header">
         <div class="header-title">UWM TA Planner</div>
     </div>
-
+    {% csrf_token %}
     <div class="body-cont">
         <div class="half-cont">
             <div class="block">
@@ -27,23 +27,14 @@
                 <div class="sub-block">
                     <div class="block-icon"><i class="fas fa-plus"></i></div>
                     <div class="block-info">
-                        <a href="viewassignments.html">
+                        <a href="ta-assignments.html">
                             <div class="sub-block-title">View Assignments</div>
                         <div class="sub-block-desc">view all class assignments</div>
                         </a>
 
                     </div>
                 </div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-pencil-alt"></i></div>
-                    <div class="block-info">
-                        <a href="editassignments.html">
-                            <div class="sub-block-title">Edit Assignments</div>
-                        <div class="sub-block-desc">edit an existing assignment</div>
-                        </a>
 
-                    </div>
-                </div>
 
             </div>
 
@@ -56,7 +47,7 @@
                 <div class="sub-block">
                     <div class="block-icon">A</div>
                     <div class="block-info">
-                        <div class="sub-block-title">Name - Department</div>
+                        <div class="sub-block-title">{{ obj }}</div>
                         <div class="sub-block-desc">Role: Administrator</div>
                     </div>
                 </div>
