@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Styled Account Creation page by adding HTML and CSS styles.">
-      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/assigninstructor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-assignments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/deleteaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/deleteaccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/deletecourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/deletecourse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/editaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/editaccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/editassignments.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/editassignments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/finduser.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/finduser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingProject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -169,6 +168,8 @@
       <workItem from="1619920985836" duration="3279000" />
       <workItem from="1620002067875" duration="1489000" />
       <workItem from="1620869904238" duration="5498000" />
+      <workItem from="1620936881728" duration="532000" />
+      <workItem from="1621037704045" duration="3530000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>

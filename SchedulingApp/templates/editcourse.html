@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
-<title>UWM Schedule Planner: All Courses</title>
+<title>UWM Schedule Planner: Edit Courses</title>
 </head>
 <body>
 
@@ -25,21 +25,31 @@
                 <th>Name</th>
                 <th>Number</th>
                 <th>Subject</th>
-                <th>Instructors</th>
+                <th>Instructor</th>
                 <th>TAs</th>
                 <th>Sections</th>
             </tr>
-            {% for Course in obj %}
+
             <tr>
-                <td> <input class="form-input" id="edit_course" name="course" type="name" placeholder={{Course.name}}></td>
-                <td> <input class="form-input" id="edit_number" name="number" type="name" placeholder={{Course.course_number}}></td>
-                <td> <input class="form-input" id="edit_subject" name="subject" type="name" placeholder={{Course.subject}}></td>
-                <td> <input class="form-input" id="edit_instructor" name="instructor" type="name" placeholder={{Course.section_instructor}}></td>
-                <td> <input class="form-input" id="edit_ta" name="ta" type="name" placeholder={{Course.lab_ta}}></td>
-                <td> <input class="form-input" id="edit_section" name="section" type="name" placeholder={{Course.section_number}}></td>
+
+                <td>  <input class="form-input" id="course_name" name="course_name" type="name" placeholder="New Instructor">
+                </td>
+                <td>
+                        <input class="form-input" id="edit_number" name="edit_number" placeholder="New Number" >{{Course.section_number}}</input>
+                </td>
+
+                <td>
+
+                    <input class="form-input" id="edit_subject" name="subject" type="name" placeholder="New Subject">
+
+                </td>
+                <td> <input class="form-input" id="edit_instructor" name="instructor" type="name" placeholder="New Instructor"></td>
+                <td> <input class="form-input" id="edit_ta" name="ta" type="name" placeholder="New TA's"></td>
+                <td> <input class="form-input" id="edit_section" name="section" type="name" placeholder="New Section Number"></td>
                 <td><input  class="button action-button" type="submit" value="confirm edit"></td>
+
             </tr>
-            {% endfor %}
+
         </table>
      </div>
     </form>
