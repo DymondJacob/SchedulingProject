@@ -221,16 +221,16 @@ select {
     margin-top:2%;
 }
 
-.profile-info{
-    width:100%;
+.profile-cont{
     display:flex;
     flex-direction:row;
+    width:100%;
 }
 
-.info-cont{
+.profile-info{
     display:flex;
     flex-direction:column;
-    width:118.5%;
+    width:80%;
 }
 
 .buttons-cont{
@@ -261,20 +261,15 @@ select {
     padding: 2.5%;
 }
 
-.acct-button{
-    background-color:#f5f5f5;
-    margin-right:5%;
-}
-
 .logout-cont{
     justify-self:flex-end;
     margin-top:8.5%;
-    width:30%;
+    width:20%;
 }
 
 .logout-button{
-    padding:7.5%;
     background-color:#FFBD00;
+    padding:7.5%;
     text-transform:uppercase;
 }
 

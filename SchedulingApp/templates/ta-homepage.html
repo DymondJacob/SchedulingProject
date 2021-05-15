@@ -40,14 +40,13 @@
 
 
         </div>
-        <div class="half-cont right-cont">
             <div class="block">
                 <div class="block-title">My Account</div>
                 <div class="sub-block">
                     <div class="block-icon">TA</div>
-                    <div class="profile-info">
-                        {% csrf_token %}
-                        <div class="info-cont">
+                    <div class="profile-cont">
+                        <div class="profile-info">
+                            {% csrf_token %}
                             <div class="sub-block-title">{{obj}}</div>
                             <div class="sub-block-desc">Role: TA</div>
                         </div>
