@@ -25,31 +25,32 @@
             <div class="block">
                 <div class="block-title">Account Management</div>
                 <a href="createaccount.html">
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user-plus"></i></div>
-                    <div class="block-info">
-                        <div class="sub-block-title">Create Account</div>
-                        <div class="sub-block-desc">create a new administrator, instructor, or TA account</div>
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Create Account</div>
+                            <div class="sub-block-desc">create a new administrator, instructor, or TA account</div>
+                        </div>
                     </div>
-                </div>
                 </a>
-                 <a href="editaccount.html">
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user-edit"></i></div>
-                    <div class="block-info">
-                        <div class="sub-block-title">Edit Account</div>
-                        <div class="sub-block-desc">edit an existing user account</div>
+                <a href="editaccount.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user-edit"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Edit Account</div>
+                            <div class="sub-block-desc">edit an existing user account</div>
+                        </div>
                     </div>
-                </div>
-                 </a>
+                </a>
                 <a href="deleteaccount.html">
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user-times"></i></div>
-                    <div class="block-info">
-                        <div class="sub-block-title">Delete Account</div>
-                        <div class="sub-block-desc">permanently delete a user from the system</div>
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user-times"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Delete Account</div>
+                            <div class="sub-block-desc">permanently delete a user from the system</div>
+                        </div>
                     </div>
-                </div></a>
+                </a>
             </div>
             <div class="block">
                 <div class="block-title">Course Management</div>
@@ -63,22 +64,22 @@
                     </div>
                 </a>
                 <a href="editcourse.html">
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-pencil-alt"></i></div>
-                    <div class="block-info">
-                        <div class="sub-block-title">Edit Course</div>
-                        <div class="sub-block-desc">edit an existing course</div>
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-pencil-alt"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Edit Course</div>
+                            <div class="sub-block-desc">edit an existing course</div>
+                        </div>
                     </div>
-                </div>
                 </a>
                 <a href="deletecourse.html">
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-trash"></i></div>
-                    <div class="block-info">
-                        <div class="sub-block-title">Delete Course</div>
-                        <div class="sub-block-desc">permanently delete an existing course</div>
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-trash"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Delete Course</div>
+                            <div class="sub-block-desc">permanently delete an existing course</div>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
 
@@ -86,62 +87,54 @@
 
         </div>
         <div class="half-cont right-cont">
-
             <div class="block">
                 <div class="block-title">My Account</div>
                 <div class="sub-block">
                     <div class="block-icon">A</div>
-                    <div class="block-info">
-                        {% csrf_token %}
-                        <div class="sub-block-title">{{obj}}</div>
-                        <div class="sub-block-desc">Role: Administrator</div>
+                    <div class="profile-cont">
+                        <div class="profile-info">
+                            {% csrf_token %}
+                            <div class="sub-block-title">{{obj}}</div>
+                            <div class="sub-block-desc">Role: Administrator</div>
+                        </div>
+                        <div class="logout-cont">
+                            <a href="/" class="button logout-button">Log Out</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="buttons-cont">
-                <div class="left-buttons">
-                    <div class="button acct-button">View Profile</div>
-                    <div class="button acct-button">Edit Profile</div>
-                </div>
-                <div class="right-buttons">
-                    <a href="/" class="button logout-button">Log Out</a>
                 </div>
             </div>
             <div class="block">
                 <div class="block-title">Search</div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-book"></i></div>
-                    <div class="block-info">
-                        <a href="allcourses.html">
-                                 <div class="sub-block-title">Find Course</div>
-                        <div class="sub-block-desc">search for a course or select one from the list of All Courses</div>
-                        </a>
-
+                <a href="allcourses.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-book"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Find Course</div>
+                            <div class="sub-block-desc">search for a course or select one from the list of All Courses</div>
+                        </div>
                     </div>
-                </div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user"></i></div>
-                    <div class="block-info">
-                        <a href="finduser.html">
-                                 <div class="sub-block-title">Find User</div>
-                        <div class="sub-block-desc">search for a user or select one from the list of All Users</div>
-                        </a>
-
+                </a>
+                <a href="finduser.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Find User</div>
+                            <div class="sub-block-desc">search for a user or select one from the list of All Users</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="block">
                 <div class="block-title">Assignment Management</div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user-plus"></i></div>
-                    <div class="block-info">
-                        <a href="assigninstructor.html">
-                            <div class="sub-block-title">Assign Instructor</div>
-                        <div class="sub-block-desc">assign a instructor to a course</div>
-                        </a>
-
+                <a href="assigninstructor.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="block-info">
+                                <div class="sub-block-title">Assign Instructor</div>
+                            <div class="sub-block-desc">assign a instructor to a course</div>
+                        </div>
                     </div>
-                </div>
+                </a>
 <!--                <div class="sub-block">-->
 <!--                    <div class="block-icon"><i class="fas fa-user-edit"></i></div>-->
 <!--                    <div class="block-info">-->

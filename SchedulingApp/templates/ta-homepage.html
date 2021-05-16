@@ -24,63 +24,52 @@
         <div class="half-cont">
             <div class="block">
                 <div class="block-title">Course Management</div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-plus"></i></div>
-                    <div class="block-info">
-                        <a href="ta-assignments.html">
+                <a href="ta-assignments.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-plus"></i></div>
+                        <div class="block-info">
                             <div class="sub-block-title">View Assignments</div>
-                        <div class="sub-block-desc">view all class assignments</div>
-                        </a>
-
+                            <div class="sub-block-desc">view all class assignments</div>
+                        </div>
                     </div>
-                </div>
-
-
-            </div>
-
-
-        </div>
-        <div class="half-cont right-cont">
-
-            <div class="block">
-                <div class="block-title">My Account</div>
-                <div class="sub-block">
-                    <div class="block-icon">A</div>
-                    <div class="block-info">
-                        <div class="sub-block-title">{{ obj }}</div>
-                        <div class="sub-block-desc">Role: Administrator</div>
-                    </div>
-                </div>
-            </div>
-            <div class="buttons-cont">
-                <div class="left-buttons">
-                    <div class="button acct-button">View Profile</div>
-                    <div class="button acct-button">Edit Profile</div>
-                </div>
-                <div class="right-buttons">
-                    <a href="/" class="button logout-button">Log Out</a>
-                </div>
+                </a>
             </div>
             <div class="block">
                 <div class="block-title">Search</div>
-                <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-book"></i></div>
-                    <div class="block-info">
-                        <a href="allcourses.html">
-                             <div class="sub-block-title">Find Course</div>
-                        <div class="sub-block-desc">search for a course or select one from the list of All Courses</div>
-                        </a>
-
+                <a href="allcourses.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-book"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Find Course</div>
+                            <div class="sub-block-desc">search for a course or select one from the list of All Courses</div>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="finduser.html">
+                    <div class="sub-block">
+                        <div class="block-icon"><i class="fas fa-user"></i></div>
+                        <div class="block-info">
+                            <div class="sub-block-title">Find User</div>
+                            <div class="sub-block-desc">search for a user or select one from the list of All Users</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="half-cont right-cont">
+            <div class="block">
+                <div class="block-title">My Account</div>
                 <div class="sub-block">
-                    <div class="block-icon"><i class="fas fa-user"></i></div>
-                    <div class="block-info">
-                        <a href="finduser.html">
-                             <div class="sub-block-title">Find User</div>
-                        <div class="sub-block-desc">search for a user or select one from the list of All Users</div>
-                        </a>
-
+                    <div class="block-icon">T</div>
+                    <div class="profile-cont">
+                        <div class="profile-info">
+                            {% csrf_token %}
+                            <div class="sub-block-title">{{obj}}</div>
+                            <div class="sub-block-desc">Role: TA</div>
+                        </div>
+                        <div class="logout-cont">
+                            <a href="/" class="button logout-button">Log Out</a>
+                        </div>
                     </div>
                 </div>
             </div>

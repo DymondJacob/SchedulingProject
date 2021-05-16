@@ -20,7 +20,7 @@
         {% csrf_token %}
     <div class="table-cont">
         <div class="table-title">All Courses</div>
-         <table id="class-table">
+         <table id="class-table" class="edit-table">
             <tr>
                 <th>Name</th>
                 <th>Number</th>
@@ -28,26 +28,17 @@
                 <th>Instructor</th>
                 <th>TAs</th>
                 <th>Sections</th>
+                <th>Confirm Edit</th>
             </tr>
 
             <tr>
-
-                <td>  <input class="form-input" id="course_name" name="course_name" type="name" placeholder="New Instructor">
-                </td>
-                <td>
-                        <input class="form-input" id="edit_number" name="edit_number" placeholder="New Number" >{{Course.section_number}}</input>
-                </td>
-
-                <td>
-
-                    <input class="form-input" id="edit_subject" name="subject" type="name" placeholder="New Subject">
-
-                </td>
-                <td> <input class="form-input" id="edit_instructor" name="instructor" type="name" placeholder="New Instructor"></td>
-                <td> <input class="form-input" id="edit_ta" name="ta" type="name" placeholder="New TA's"></td>
-                <td> <input class="form-input" id="edit_section" name="section" type="name" placeholder="New Section Number"></td>
-                <td><input  class="button action-button" type="submit" value="confirm edit"></td>
-
+                <td><input class="form-input table-form-input" id="course_name" name="course_name" type="name" placeholder="New Name"></td>
+                <td><input class="form-input table-form-input" id="edit_number" name="edit_number" placeholder="New Number" >{{Course.section_number}}</input></td>
+                <td><input class="form-input table-form-input" id="edit_subject" name="subject" type="name" placeholder="New Subject"></td>
+                <td> <input class="form-input table-form-input" id="edit_instructor" name="instructor" type="name" placeholder="New Instructor"></td>
+                <td> <input class="form-input table-form-input" id="edit_ta" name="ta" type="name" placeholder="New TA's"></td>
+                <td> <input class="form-input table-form-input" id="edit_section" name="section" type="name" placeholder="New Section Number"></td>
+                <td><input class="button edit-button" type="submit" value="confirm edit"></td>
             </tr>
 
         </table>
