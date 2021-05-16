@@ -88,6 +88,7 @@ class AdminMainView(TestCase):
         self.client = Client()
         session = self.client.session
         session["user_type"] = "AD"
+        session["name"] = "Jacob Dymond"
         session.save()
         self.url = reverse('admin-homepage')
 
@@ -113,15 +114,17 @@ class CreateCourse(TestCase):
         self.client = Client()
         session = self.client.session
         session["user_type"] = "AD"
+        session["name"] = "Jacob Dymond"
         session.save()
         self.url = reverse('createcourse')
-        self.name = "Jacob"
+        self.name = "Jacob Dymond"
         self.subject = "Mathematical Sciences"
         self.course_number = "123"
         self.section_instructor = "Troy"
         self.section_ta = "Sungwoong"
         self.lab_instructor = "Troy"
         self.lab_ta = "Sungwoong"
+        self.section_number = "5"
 
 
     def test_create_course_get(self):
@@ -132,7 +135,7 @@ class CreateCourse(TestCase):
     def test_create_course_post(self):
         response = self.client.post(self.url, {'name': self.name, 'select-subject': self.subject, 'course_number': self.course_number,
                                                'section-instructor': self.section_instructor, 'section-ta': self.section_ta,
-                                               'lab-instructor': self.lab_instructor, 'lab-ta': self.lab_ta})
+                                               'lab-instructor': self.lab_instructor, 'lab-ta': self.lab_ta, 'section-number': self.section_number})
         self.assertEquals(response.status_code, 200, msg="GET Request to CreateCourse Failed")
 
     def test_subject_button(self):
@@ -155,6 +158,7 @@ class CreateAccount(TestCase):
         self.client = Client()
         session = self.client.session
         session["user_type"] = "AD"
+        session["name"] = "Jacob Dymond"
         session.save()
         self.url = reverse('createaccount')
         self.email = "bob@gmail.com"
@@ -198,6 +202,7 @@ class InstructorPage(TestCase):
         self.client = Client()
         session = self.client.session
         session["user_type"] = "IN"
+        session["name"] = "Troy"
         session.save()
         self.url = reverse('instructor-homepage')
 
@@ -211,18 +216,18 @@ class InstructorPage(TestCase):
         self.assertContains(response, '<div class="header-title">UWM Instructor Planner</div>',
                             status_code=200, msg_prefix="Instructor Planner HTML is on incorrect page")
 
-    # def test_view_assignments(self):
-    #     response = self.client.get(self.url)
-    #     self.assertContains(response, '<a href="viewassignments.html">',
-    #                     status_code=200, msg_prefix="Create Account does not contain view assignment input")
-    # def test_add_section(self):
-    #     response = self.client.get(self.url)
-    #     self.assertContains(response, '<a href="addsection.html">',
-    #                     status_code=200, msg_prefix="Create Account does not contain add course section link")
+    def test_view_courses(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="instructor-courses.html">',
+                        status_code=200, msg_prefix="Instructor Planner does not contain view courses link")
+    def test_add_lab(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<a href="addlab.html">',
+                        status_code=200, msg_prefix="Instructor Planner does not contain add lab link")
     def test_find_course(self):
         response = self.client.get(self.url)
         self.assertContains(response, '<a href="allcourses.html">',
-                        status_code=200, msg_prefix="Create Account does not contain find course link")
+                        status_code=200, msg_prefix="Instructor Planner does not contain find course link")
 
     def test_log_out(self):
         response = self.client.get(self.url)
@@ -234,6 +239,8 @@ class TAPage(TestCase):
         self.client = Client()
         session = self.client.session
         session["user_type"] = "TA"
+        session["name"] = "Sungwoong"
+        # self.ta_name = "Sungwoong"
         session.save()
         self.url = reverse('ta-homepage')
 
@@ -249,9 +256,40 @@ class TAPage(TestCase):
 
     def test_view_assignments(self):
         response = self.client.get(self.url)
-        self.assertContains(response, '<a href="viewassignments.html">',
+        self.assertContains(response, '<a href="ta-assignments.html">',
                         status_code=200, msg_prefix="TA Planner does not contain view assignment link")
     def test_log_out(self):
         response = self.client.get(self.url)
         self.assertContains(response, '<a href="/" class="button logout-button">Log Out</a>',
                         status_code=200, msg_prefix="TA Planner doesn't contain logout")
+
+
+class InstructorCourses(TestCase):
+    def setUp(self):
+        self.client = Client()
+        session = self.client.session
+        session["user_type"] = "IN"
+        session["name"] = "Troy"
+        session.save()
+        self.url = reverse('instructor-courses')
+
+    def test_instructor_courses_get(self):
+        response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 200, msg="GET Request to CreateCourse Failed")
+        self.assertTemplateUsed(response, 'instructor-courses.html', msg_prefix="Wrong Template was Rendered for TA Input")
+
+    def test_instructor_courses(self):
+        response = self.client.get(self.url)
+        self.assertContains(response, '<div class="table-title">My Courses</div>',
+                            status_code=200, msg_prefix="Instructor Courses HTML is on incorrect page")
+
+    def test_not_authorized(self):
+        session = self.client.session
+        session["user_type"] = "TA"
+        session["name"] = "Sungwoong"
+        session.save()
+        response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 302, msg="GET Request to InstructorCourses should be redirected")
+        self.assertEquals(response.url, "ta-homepage.html", msg="Redirect url is not right")
+
+        # self.assertTemplateUsed(response, 'ta-homepage.html', msg_prefix="Wrong Template was Rendered for TA Input")
