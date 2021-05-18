@@ -35,7 +35,7 @@ class TestLogin(TestCase):
         self.assertTemplateUsed(response, 'login.html', msg_prefix="Wrong Template was Rendered for Login")
 
     def test_admin_login_post(self):
-        MyUser.objects.create(name=self.name, password=self.password, email=self.email, user_type=self.user_type )
+        MyUser.objects.create(name=self.name, password=self.password, email=self.email, user_type=self.user_type, ta_count=0 )
         response = self.client.post(self.home_url, {'email': self.email, 'pw': self.password}, follow=True)
         self.assertEquals(response.status_code, 200, msg="GET Request to Admin Home Page Failed")
 
@@ -43,7 +43,7 @@ class TestLogin(TestCase):
         self.assertEquals(existingUser.password, self.password, msg="Passwords do not match from database")
 
     def test_instructor_login_post(self):
-        MyUser.objects.create(name=self.instructor_name, password=self.instructor_password, email=self.instructor_email, user_type=self.instructor_user_type )
+        MyUser.objects.create(name=self.instructor_name, password=self.instructor_password, email=self.instructor_email, user_type=self.instructor_user_type, ta_count=0 )
         response = self.client.post(self.home_url, {'email': self.instructor_email, 'pw': self.instructor_password}, follow=True)
         self.assertEquals(response.status_code, 200, msg="GET Request to Instructor Home Page Failed")
 
@@ -53,7 +53,7 @@ class TestLogin(TestCase):
 
     def test_ta_login_post(self):
         MyUser.objects.create(name=self.ta_name, password=self.ta_password,
-                              email=self.ta_email, user_type=self.ta_user_type)
+                              email=self.ta_email, user_type=self.ta_user_type, ta_count=0)
         response = self.client.post(self.home_url, {'email': self.ta_email, 'pw': self.ta_password},
                                     follow=True)
         self.assertEquals(response.status_code, 200, msg="GET Request to TA Home Page Failed")
@@ -78,7 +78,7 @@ class TestLogin(TestCase):
         self.assertContains(response, '<input class="button action-button" type="submit" value="login">',
                             status_code=200,  msg_prefix="Home Page does not contain submit field")
     def test_login(self):
-        MyUser.objects.create(password=self.password, email=self.email)
+        MyUser.objects.create(password=self.password, email=self.email, ta_count=0)
         test_user = MyUser.objects.get(email=self.email)
         self.assertEquals(test_user.password, self.password, msg="Wrong Password")
 
@@ -185,15 +185,15 @@ class CreateAccount(TestCase):
 
     def test_create_name_field(self):
         response = self.client.get(self.url)
-        self.assertContains(response, '<input class="form-input" id="create_id" name="name" type="text" placeholder="username">',
+        self.assertContains(response, '<input class="form-input" id="create_id" name="name" type="text" placeholder="username" required>',
                         status_code=200, msg_prefix="Create Account does not contain course name input")
     def test_create_email_field(self):
         response = self.client.get(self.url)
-        self.assertContains(response, '<input class="form-input" id="create_email" name="email" type="email" placeholder="email">',
+        self.assertContains(response, '<input class="form-input" id="create_email" name="email" type="email" placeholder="email" required>',
                         status_code=200, msg_prefix="Create Account does not contain course email input")
     def test_create_password_field(self):
         response = self.client.get(self.url)
-        self.assertContains(response, '<input class="form-input" id="create_pw" name="pw" type="text" placeholder="password">',
+        self.assertContains(response, '<input class="form-input" id="create_pw" name="pw" type="text" placeholder="password" required>',
                         status_code=200, msg_prefix="Create Account does not contain course password input")
 
 

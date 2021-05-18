@@ -23,24 +23,204 @@
          <table id="class-table" class="edit-table">
             <tr>
                 <th>Name</th>
+                <th>Instructor</th>
                 <th>Number</th>
                 <th>Subject</th>
-                <th>Instructor</th>
                 <th>TAs</th>
                 <th>Sections</th>
                 <th>Confirm Edit</th>
             </tr>
 
+             {% for Course in obj %}
             <tr>
-                <td><input class="form-input table-form-input" id="course_name" name="course_name" type="name" placeholder="New Name"></td>
-                <td><input class="form-input table-form-input" id="edit_number" name="edit_number" placeholder="New Number" >{{Course.section_number}}</input></td>
-                <td><input class="form-input table-form-input" id="edit_subject" name="subject" type="name" placeholder="New Subject"></td>
-                <td> <input class="form-input table-form-input" id="edit_instructor" name="instructor" type="name" placeholder="New Instructor"></td>
-                <td> <input class="form-input table-form-input" id="edit_ta" name="ta" type="name" placeholder="New TA's"></td>
+
+                <td><select class="table-select" name="course_name" id="course_name" required>
+                                <option selected disabled>Course</option>
+                                <option >{{Course.name}}</option>
+                            </select></td>
+                <td>
+                     <select class="table-select" name="section-instructor" id="section-instructor" required>
+                                <option selected disabled>New Instructor</option>
+                                <option value={{Course.section_instructor}} >{{Course.section_instructor}}</option>
+                            </select>
+
+                </td>
+                <td><input class="form-input table-form-input" id="edit_number" name="edit_number" placeholder="New Number"></input></td>
+                <td>
+                      <select name="subject" id="subject">
+                                <option selected disabled>Choose a subject</option>
+                                <option value="ACTSCI">Actuarial Science (ACTSCI)</option>
+                                <option value="AD-LDSP">Administrative Leadership (AD LDSP)</option>
+                                <option value="AFRIC">African & African Diaspora Studies (AFRIC)</option>
+                                <option value="AFAS">Air Force and Aerospace Studies (AFAS)</option>
+                                <option value="AIS">American Indian Studies (AIS)</option>
+                                <option value="ANTHRO">Anthropology (ANTHRO)</option>
+                                <option value="APC">Applied Computing (APC)</option>
+                                <option value="ARABIC">Arabic (ARABIC)</option>
+                                <option value="ARCH">Architecture (ARCH)</option>
+                                <option value="ART">Art and Design (ART)</option>
+                                <option value="ART-ED">Art Education (ART ED)</option>
+                                <option value="ARTHIST">Art History (ARTHIST)</option>
+                                <option value="ASTRON">Astronomy (ASTRON)</option>
+                                <option value="ATM-SCI">Atmospheric Sciences (ATM SCI)</option>
+                                <option value="BIO-SCI">Biological Sciences (BIO SCI)</option>
+                                <option value="BME">Biomedical Engineering (BME)</option>
+                                <option value="BMS">Biomedical Sciences (BMS)</option>
+                                <option value="BUS-ADM">Business Administration (BUS ADM)</option>
+                                <option value="BUSMGMT">Business Management (BUSMGMT)</option>
+                                <option value="CELTIC">Celtic Studies (CELTIC)</option>
+                                <option value="CGS-V">CGS American Indian Studies (CGS AIS)</option>
+                                <option value="CGS-ANT">CGS Anthropology (CGS ANT)</option>
+                                <option value="CGS-ART">CGS Art (CGS ART)</option>
+                                <option value="CGS-AST">CGS Astronomy (CGS AST)</option>
+                                <option value="CGS-BIO">CGS Biology (CGS BIO)</option>
+                                <option value="CGS-BUS">CGS Business (CGS BUS)</option>
+                                <option value="CGS-CHE">CGS Chemistry (CGS CHE)</option>
+                                <option value="CGS-CTA">CGS Communication Arts & Theatre (CGS CTA)</option>
+                                <option value="CGS-CPS">CGS Computer Science (CGS CPS)</option>
+                                <option value="CGS-ECO">CGS Economics (CGS ECO)</option>
+                                <option value="CGS-EDU">CGS Education (CGS EDU)</option>
+                                <option value="CGS-EGR">CGS Engineering (CGS EGR)</option>
+                                <option value="CGS-ENG">CGS English (CGS ENG)</option>
+                                <option value="CGS-FRE">CGS French (CGS FRE)</option>
+                                <option value="CGS-GSW">CGS Gender, Sexuality, and Women's Studies (CGS GSW)</option>
+                                <option value="CGS-GEO">CGS Geography (CGS GEO)</option>
+                                <option value="CGS-GLG">CGS Geology (CGS GLG)</option>
+                                <option value="CGS-GER">CGS German (CGS GER)</option>
+                                <option value="CGS-HES">CGS Health and Exercise Sciences (CGS HES)</option>
+                                <option value="CGS-INT">CGS Interdisciplinary Studies (CGS INT)</option>
+                                <option value="CGS-ITA">CGS Italian (CGS ITA)</option>
+                                <option value="CGS-LEA">CGS Learning Resources (CGS LEA)</option>
+                                <option value="CGS-LEC">CGS Lecture Forum (CGS LEC)</option>
+                                <option value="CGS-MAT">CGS Mathematics (CGS MAT)</option>
+                                <option value="CGS-MLG">CGS Meteorology (CGS MLG)</option>
+                                <option value="CGS-MUS">CGS Music (CGS MUS)</option>
+                                <option value="CGS-MUA">CGS Music Applied (CGS MUA)</option>
+                                <option value="CGS-PHI">CGS Philosophy (CGS PHI)</option>
+                                <option value="CGS-PHY">CGS Physics (CGS PHY)</option>
+                                <option value="CGS-POL">CGS Political Science (CGS POL)</option>
+                                <option value="CGS-PSY">CGS Psychology (CGS PSY)</option>
+                                <option value="CGS-REL">CGS Religious Studies (CGS REL)</option>
+                                <option value="CGS-SOC">CGS Sociology (CGS SOC)</option>
+                                <option value="CGS-SPA">CGS Spanish (CGS SPA)</option>
+                                <option value="CHEM">Chemistry and Biochemistry (CHEM)</option>
+                                <option value="CHINESE">Chinese (CHINESE)</option>
+                                <option value="CIV-ENG">Civil & Environmental Engineering (CIV ENG)</option>
+                                <option value="CLASSIC">Classics (CLASSIC)</option>
+                                <option value="CHS">College of Health Sciences (CHS)</option>
+                                <option value="COMMUN">Communication (COMMUN)</option>
+                                <option value="COMSDIS">Communication Sciences and Disorders (COMSDIS)</option>
+                                <option value="COMPLIT">Comparative Literature (COMPLIT)</option>
+                                <option value="COMPSCI">Computer Science (COMPSCI)</option>
+                                <option value="COMPST">Computer Studies (COMPST)</option>
+                                <option value="CES">Conservation and Environmental Sciences (CES)</option>
+                                <option value="COUNS">Counseling (COUNS)</option>
+                                <option value="CRM-JST">Criminal Justice & Criminology (CRM JST)</option>
+                                <option value="CURRINS">Curriculum and Instruction (CURRINS)</option>
+                                <option value="DANCE">Dance (DANCE)</option>
+                                <option value="DMI">Diagnostic Imaging (DMI)</option>
+                                <option value="DAC">Digital Arts and Culture (DAC)</option>
+                                <option value="ECON">Economics (ECON)</option>
+                                <option value="EDUC">Education-Interdepartmental (EDUC)</option>
+                                <option value="ED-POL">Educational Policy and Community Studies (ED POL)</option>
+                                <option value="ED-PSY">Educational Psychology (ED PSY)</option>
+                                <option value="ELECENG">Electrical Engineering (ELECENG)</option>
+                                <option value="EAS">Engineering and Applied Science (EAS)</option>
+                                <option value="ENGLISH">English (ENGLISH)</option>
+                                <option value="EAP">English for Academic Purposes (Formerly ESL) (EAP)</option>
+                                <option value="EOH">Environmental and Occupational Health (EOH)</option>
+                                <option value="ETHNIC">Ethnic Studies, Comparative (ETHNIC)</option>
+                                <option value="EXCEDUC">Exceptional Education (EXCEDUC)</option>
+                                <option value="FILMSTD">Film Studies (FILMSTD)</option>
+                                <option value="FILM">Film, Video, Animation and New Genres (FILM)</option>
+                                <option value="FINEART">Fine Arts-Interdepartmental (FINEART)</option>
+                                <option value="FOODBEV">Food & Beverage Studies (FOODBEV)</option>
+                                <option value="FLL">Foreign Languages and Literature (FLL)</option>
+                                <option value="FRENCH">French (FRENCH)</option>
+                                <option value="FRSHWTR">Freshwater Sciences (FRSHWTR)</option>
+                                <option value="GEOG">Geography (GEOG)</option>
+                                <option value="GEO-SCI">Geosciences (GEO SCI)</option>
+                                <option value="GERMAN">German (GERMAN)</option>
+                                <option value="GLOBAL">Global Studies (GLOBAL)</option>
+                                <option value="GRAD">Graduate Studies (GRAD)</option>
+                                <option value="GREEK">Greek (GREEK)</option>
+                                <option value="HCA">Health Care Administration (HCA)</option>
+                                <option value="HS">Health Sciences (HS)</option>
+                                <option value="HEBREW">Hebrew (HEBREW)</option>
+                                <option value="HIST">History (HIST)</option>
+                                <option value="HMONG">Hmong Studies (HMONG)</option>
+                                <option value="HONORS">Honors College (HONORS)</option>
+                                <option value="IND-REL">Industrial and Labor Relations (IND REL)</option>
+                                <option value="IND-ENG">Industrial and Manufacturing Engineering (IND ENG)</option>
+                                <option value="INFOST">Information Studies (INFOST)</option>
+                                <option value="INTLST">International Studies (INTLST)</option>
+                                <option value="ITALIAN">Italian (ITALIAN)</option>
+                                <option value="JAPAN">Japanese (JAPAN)</option>
+                                <option value="JEWISH">Jewish Studies (JEWISH)</option>
+                                <option value="JAMS">Journalism, Advertising, and Media Studies (JAMS)</option>
+                                <option value="KIN">Kinesiology (KIN)</option>
+                                <option value="KOREAN">Korean (KOREAN)</option>
+                                <option value="LATIN">Latin (LATIN)</option>
+                                <option value="LACS">Latin American and Caribbean Studies (LACS)</option>
+                                <option value="LACUSL">Latin American, Caribbean, and U.S. Latinx Studies (LACUSL)</option>
+                                <option value="LATINO">Latino Studies (LATINO)</option>
+                                <option value="LGBT">Lesbian, Gay, Bisexual & Transgender Studies (LGBT)</option>
+                                <option value="L&S-HUM">Letters and Science-Humanities (L&S HUM)</option>
+                                <option value="L&S-NS">Letters and Science-Natural Science (L&S NS)</option>
+                                <option value="L&S-SS">Letters and Science-Social Sciences (L&S SS)</option>
+                                <option value="LIBRLST">Liberal Studies (LIBRLST)</option>
+                                <option value="LINGUIS">Linguistics (LINGUIS)</option>
+                                <option value="MALLT">M.A. in Language, Literature, and Translation (MALLT)</option>
+                                <option value="MATLENG">Materials Science and Engineering (MATLENG)</option>
+                                <option value="MATH">Mathematical Sciences (MATH)</option>
+                                <option value="MTHSTAT">Mathematical Statistics (MTHSTAT)</option>
+                                <option value="MECHENG">Mechanical Engineering (MECHENG)</option>
+                                <option value="MIL-SCI">Military Science (MIL SCI)</option>
+                                <option value="MUSIC">Music (MUSIC)</option>
+                                <option value="MUS ED">Music Education (MUS ED)</option>
+                                <option value="MUSPERF">Music Performance (MUSPERF)</option>
+                                <option value="NONPROF">Nonprofit Administration (NONPROF)</option>
+                                <option value="NURS">Nursing (NURS)</option>
+                                <option value="NUTR">Nutritional Sciences (NUTR)</option>
+                                <option value="OCCTHPY">Occupational Therapy (OCCTHPY)</option>
+                                <option value="UWX">Online Collaborative AAS Program (UWX)</option>
+                                <option value="PEACEST">Peace Studies (PEACEST)</option>
+                                <option value="PHILOS">Philosophy (PHILOS)</option>
+                                <option value="PRPP">Physical Rehabilitation and Performance Psychology (PRPP)</option>
+                                <option value="PHYSICS">Physics (PHYSICS)</option>
+                                <option value="POLISH">Polish (POLISH)</option>
+                                <option value="POL-SCI">Political Science (POL SCI)</option>
+                                <option value="PORTUGS">Portuguese (PORTUGS)</option>
+                                <option value="PSYCH">Psychology (PSYCH)</option>
+                                <option value="PUB-ADM">Public Administration (PUB ADM)</option>
+                                <option value="PH">Public Health (PH)</option>
+                                <option value="RELIGST">Religious Studies (RELIGST)</option>
+                                <option value="RUSSIAN">Russian (RUSSIAN)</option>
+                                <option value="SCNDVST">Scandinavian Studies (SCNDVST)</option>
+                                <option value="SOC-WRK">Social Work (SOC WRK)</option>
+                                <option value="SOCIOL">Sociology (SOCIOL)</option>
+                                <option value="SPANISH">Spanish (SPANISH)</option>
+                                <option value="SPT&REC">Sport and Recreation (SPT&REC)</option>
+                                <option value="MSP">Sustainable Peacebuilding, Master of (MSP)</option>
+                                <option value="THEATRE">Theatre (THEATRE)</option>
+                                <option value="THERREC">Therapeutic Recreation (THERREC)</option>
+                                <option value="TRNSLTN">Translation and Interpreting (TRNSLTN)</option>
+                                <option value="URBPLAN">Urban Planning (URBPLAN)</option>
+                                <option value="URB STD">Urban Studies Program (URB STD)</option>
+                                <option value="UWS NSG">UWS Collaborative Nursing Program (UWS NSG)</option>
+                                <option value="WGS">Women's and Gender Studies (WGS)</option>
+                            </select>
+
+
+                </td>
+                <td>   <select class="table-select" name="section-ta" required>
+                                <option selected disabled>New TA</option>
+                                <option value={{tas.name}} >{{Course.lab_ta}}</option>
+                            </select></td>
                 <td> <input class="form-input table-form-input" id="edit_section" name="section" type="name" placeholder="New Section Number"></td>
                 <td><input class="button edit-button" type="submit" value="confirm edit"></td>
             </tr>
-
+            {% endfor %}
         </table>
      </div>
     </form>

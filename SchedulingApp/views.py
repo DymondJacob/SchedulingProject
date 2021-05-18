@@ -320,18 +320,18 @@ class EditCourse(View):
         name = request.POST["course_name"]
         editCourse = Course.objects.get(name=name)
         if request.POST['edit_number'] != '':
-            editCourse.course_number = request.POST['edit_number']
+            editCourse.course_number = request.POST['edit_number'][0]
         if request.POST['subject'] != '':
-            editCourse.subject = request.POST['subject']
-        if request.POST['instructor'] != '':
-            editCourse.section_instructor = request.POST['instructor']
-        if request.POST['ta'] != '':
-            editCourse.lab_ta = request.POST['ta']
+            editCourse.subject = request.POST['subject'][0]
+        if request.POST['section-instructor'] != '':
+            editCourse.section_instructor = request.POST['section-instructor']
+        if request.POST['section-ta'] != '':
+            editCourse.lab_ta = request.POST['section-ta'][0]
         if request.POST['section'] != '':
-            editCourse.section_number = request.POST['section']
+            editCourse.section_number = request.POST['section'][0]
         editCourse.save()
         obj = Course.objects.all()
-        return render(request, 'editcourse.html', {"obj": obj})
+        return render(request, 'editcourse.html', {'obj': obj})
 
 class DeleteCourse(View):
 
