@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d3b374ba-a01d-41e9-9b81-6c5f2eb94154" name="Default Changelist" comment="Fixed logout button styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/admin-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/assigninstructor.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/assigninstructor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/editcourse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/addlab.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/addlab.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/instructor-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulingApp/templates/ta-homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,6 +166,7 @@
       <workItem from="1621037704045" duration="3530000" />
       <workItem from="1621089923189" duration="251000" />
       <workItem from="1621090194169" duration="4696000" />
+      <workItem from="1621294827518" duration="1228000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin homepage and CSS styles.">
       <created>1618952774556</created>
