@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.views.generic import View
+from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login
@@ -146,7 +147,7 @@ class CreateAccount(View):
                 "message": "You can't access this page"
             })
         elif (request.session['user_type'] == 'TA'):
-            return redirect('ta-homepage.html', {
+            return render('ta-homepage.html', {
                 "alert": True,
                 "message": "You can't access this page, "
             })
@@ -159,18 +160,20 @@ class CreateAccount(View):
         pw = request.POST["pw"]
         status = request.POST['user_type']
 
-        userExist = MyUser.objects.filter(email=email).exists()
-        if not userExist:
-            try:
-                MyUser.objects.create(name=name, password=pw, email=email, user_type=status)
-                return redirect('admin-homepage.html')
-            except IntegrityError:
-                pass
+        tryUser = MyUser.objects.filter(email=email).exists()
 
-        return render(request, 'createaccount.html', {
+        if (tryUser == True):
+            return redirect('createaccount.html', {
+                "alert": True,
+                "message": "Account exists already"
+            })
+
+        MyUser.objects.create(name=name, password=pw, email=email, user_type=status, ta_count=0)
+        return redirect('admin-homepage.html', {
             "alert": True,
-            "message": "The email address is already existed.",
+            "message": "Account created"
         })
+
 
 class EditAccount(View):
     def get(self, request):
@@ -190,16 +193,22 @@ class EditAccount(View):
     def post(self, request):
         print(request.POST)
         email = request.POST["email"]
-        pw = request.POST["pw"]
         new_email = request.POST["new_email"]
         new_pw = request.POST["new_pw"]
         status = request.POST['user_type']
+        tryUser = MyUser.objects.filter(email=email).exists()
+
+        if (tryUser == False):
+            return redirect('editaccount.html', {
+                "alert": True,
+                "message": "Account not found, please try again"
+            })
+
         userExist = MyUser.objects.get(email=email)
         userExist.email = new_email
         userExist.password = new_pw
         userExist.user_type = status
         userExist.save()
-        print(userExist.email)
         return render(request, 'editaccount.html')
 
 
@@ -221,10 +230,20 @@ class DeleteAccount(View):
     def post(self, request):
         print(request.POST)
         email = request.POST["email"]
+        tryUser = MyUser.objects.filter(Q(email=email)).exists()
+        if tryUser == False:
+            return render(request, 'deleteaccount.html', {
+                "alert": True,
+                "message": "Account Not Found, try again"
+            })
+
         userExist = MyUser.objects.get(email=email)
         userExist.delete()
-        print(userExist.email)
-        return render(request, 'deleteaccount.html')
+        return render(request, 'deleteaccount.html', {
+            "alert": True,
+            "message": "Account Deleted"
+        })
+
 
 class CreateCourse(View):
     def get(self, request):
@@ -277,7 +296,9 @@ class TaAssignments(View):
         else:
             obj = Course.objects.all()
             print(request.session['name'])
-            return render(request, 'ta-assignments.html', {"obj": obj})
+            for course in obj:
+                print(course)
+            return render(request, 'ta-assignments.html', {"obj": obj, 'name': request.session['name']})
 
 class AllCourses(View):
 
@@ -299,18 +320,18 @@ class EditCourse(View):
         name = request.POST["course_name"]
         editCourse = Course.objects.get(name=name)
         if request.POST['edit_number'] != '':
-            editCourse.course_number = request.POST['edit_number']
+            editCourse.course_number = request.POST['edit_number'][0]
         if request.POST['subject'] != '':
-            editCourse.subject = request.POST['subject']
-        if request.POST['instructor'] != '':
-            editCourse.section_instructor = request.POST['instructor']
-        if request.POST['ta'] != '':
-            editCourse.lab_ta = request.POST['ta']
+            editCourse.subject = request.POST['subject'][0]
+        if request.POST['section-instructor'] != '':
+            editCourse.section_instructor = request.POST['section-instructor']
+        if request.POST['section-ta'] != '':
+            editCourse.lab_ta = request.POST['section-ta'][0]
         if request.POST['section'] != '':
-            editCourse.section_number = request.POST['section']
+            editCourse.section_number = request.POST['section'][0]
         editCourse.save()
         obj = Course.objects.all()
-        return render(request, 'editcourse.html', {"obj": obj})
+        return render(request, 'editcourse.html', {'obj': obj})
 
 class DeleteCourse(View):
 
@@ -322,9 +343,21 @@ class DeleteCourse(View):
     def post(self, request):
         print(request.POST)
         course_number = request.POST["course_number"]
+        tryCourse = Course.objects.filter(Q(course_number=course_number)).exists()
+        if tryCourse == False:
+            return render(request, 'deletecourse.html', {
+                "alert": True,
+                "message": "Course Not Found"
+            })
+
+
+
         currentCourse = Course.objects.get(course_number=course_number)
         currentCourse.delete()
-        return render(request, 'admin-homepage.html')
+        return render(request, 'admin-homepage.html', {
+            "alert": True,
+            "message": "Course Deleted"
+        })
 
 
 class FindUser(View):
@@ -356,6 +389,20 @@ class AddLab(View):
 
     def post(self, request):
         classNum = Course.objects.get(section_number=request.POST['section-number'])
+
+
+
+
+        taCheck = MyUser.objects.get(name=request.POST['section-ta'])
+        if taCheck.ta_count == 2:
+            messages.info(request, message="TA's can only have two assignments!")
+            return redirect('addlab.html', {
+                "alert": True,
+                "message": "TA's can only be assigned to 2 courses max "
+            })
+
+        taCheck.ta_count +=1
+        taCheck.save()
         classNum.lab_ta = request.POST['section-ta']
         classNum.save()
         return render(request, 'instructor-homepage.html', {})

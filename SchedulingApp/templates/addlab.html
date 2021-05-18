@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
 </html><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,54 +19,51 @@
         <div class="header-title">UWM Schedule Planner</div>
     </div>
 
+
     <div class="table-cont">
 
         <div class="table-title">Add TA</div>
         <form action="/addlab.html" method="post">
             {% csrf_token %}
-         <table id="class-table">
-            <tr>
-                <th>Name</th>
-                <th>Sections</th>
-                <th>TA's</th>
-                <th>Assign TA</th>
-            </tr>
-            {% for Course in obj %}
-             {% if Course.section_instructor == name %}
-            <tr>
-                <td>
-                      <select name="course-name">
-                                <option value={{Course.name}}>{{Course.name}}</option>
-                            </select>
-
-                </td>
-                <td>
-                      <select name="section-number">
-                                <option selected disabled>Choose a Section</option>
-                                <option value={{Course.section_number}}>{{Course.section_number}}</option>
-                            </select>
-
-                </td>
-
-                <td>
-
-                        <select name="section-ta">
+             <table id="class-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Sections</th>
+                    <th>TAs</th>
+                    <th>Assign TA</th>
+                </tr>
+                {% for Course in obj %}
+                 {% if Course.section_instructor == name %}
+                <tr>
+                    <td>{{Course.name}}</td>
+                    <td>
+                          <select class="table-select" name="section-number" required>
+                              <option selected disabled>Choose a Section</option>
+                              <option value={{Course.section_number}}>{{Course.section_number}}</option>
+                          </select>
+                    </td>
+                    <td>
+                            <select class="table-select" name="section-ta" required>
                                 <option selected disabled>Choose an TA</option>
                                 {% for tas in ta %}
                                 {% if tas.user_type == "TA" %}
-                                <option value={{tas.name}}>{{tas.name}}</option>
+                                <option value={{tas.name}} >{{tas.name}}</option>
                                 {% endif %}
                                 {% endfor %}
                             </select>
-
-                </td>
-                <td><input class="button" type="submit" value="Assign"/></td>
-            </tr>
-             {% endif %}
-            {% endfor %}
-              </form>
-        </table>
+                    </td>
+                    <td><input class="button edit-button" type="submit" value="Assign"></td>
+                </tr>
+                 {% endif %}
+                {% endfor %}
+            </table>
+        </form>
      </div>
 
 </body>
+<script>
+        {% if messages %}
+         alert("TA's cant be assigned to more than two courses")
+       {% endif %}
+</script>
 </html>
