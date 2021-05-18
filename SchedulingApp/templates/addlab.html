@@ -19,6 +19,7 @@
         <div class="header-title">UWM Schedule Planner</div>
     </div>
 
+
     <div class="table-cont">
 
         <div class="table-title">Add TA</div>
@@ -36,17 +37,17 @@
                 <tr>
                     <td>{{Course.name}}</td>
                     <td>
-                          <select class="table-select" name="section-number">
+                          <select class="table-select" name="section-number" required>
                               <option selected disabled>Choose a Section</option>
                               <option value={{Course.section_number}}>{{Course.section_number}}</option>
                           </select>
                     </td>
                     <td>
-                            <select class="table-select" name="section-ta">
+                            <select class="table-select" name="section-ta" required>
                                 <option selected disabled>Choose an TA</option>
                                 {% for tas in ta %}
                                 {% if tas.user_type == "TA" %}
-                                <option value={{tas.name}}>{{tas.name}}</option>
+                                <option value={{tas.name}} >{{tas.name}}</option>
                                 {% endif %}
                                 {% endfor %}
                             </select>
@@ -60,4 +61,9 @@
      </div>
 
 </body>
+<script>
+        {% if messages %}
+         alert("TA's cant be assigned to more than two courses")
+       {% endif %}
+</script>
 </html>
